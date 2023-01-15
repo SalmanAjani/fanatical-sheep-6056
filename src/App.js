@@ -1,6 +1,6 @@
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-import AllRoutes from "./pages/AllRoutes";
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/NavBar/NavBar";
+import AllRoutes from "./pages/AllRoutes/AllRoutes";
 
 function App() {
   return (
