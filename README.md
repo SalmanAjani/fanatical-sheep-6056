@@ -13,9 +13,6 @@ Thank you for visiting our project.
 - firebase: [click here](https://paytmmall.com/)
 - Original website : [click here](https://paytmmall.com/)
 
-## Few Images Of our Web Site
-- Home page and navbar
-
 ## Tech Stack
 ### Client side
 - React
@@ -30,7 +27,7 @@ Thank you for visiting our project.
 - jwt
 - bcrypt
 
-##Team members
+## Team members
 It's a collaborative Project, we name this team fanatical-sheep, and our members are 
 
 -
@@ -39,4 +36,6 @@ It's a collaborative Project, we name this team fanatical-sheep, and our members
 -
 -
 
+## Few Images Of our Web Site
+- Home page and navbar
 
