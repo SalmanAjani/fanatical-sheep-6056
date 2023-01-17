@@ -1,7 +1,9 @@
 # Nimble Cart
 
 ## Basic Information
-Welcome to the nimble cart project! Our website is inspired by Paytm mall and is designed to be a one-stop shop for all your online shopping needs. With a wide range of products and easy payment options, have User and Admin side, we strive to make your shopping experience seamless and convenient. The code for this project can be found in this repository, and we welcome any contributions or feedback. Thank you for visiting our project.
+Welcome to the nimble cart project. nimble to represent the idea of quick and easy online shopping. Our website is inspired by Paytm mall and is designed to be a one-stop shop for all your online shopping needs. With a wide range of products and easy payment options, have User and Admin side, we strive to make your shopping experience seamless and convenient. The code for this project can be found in this repository, and we welcome any contributions or feedback.
+our slogan "Shop Smart. Shop Nimble".
+Thank you for visiting our project.
 
 ## Live Links of Our Website
 - Vercel: [click here](https://paytmmall.com/)
