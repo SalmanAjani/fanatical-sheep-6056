@@ -14,8 +14,8 @@ Thank you for visiting our project.
 - Original website : [click here](https://paytmmall.com/)
 
 ## Tech Stack
-### Client side
-- React
+### Client side                    ggggggg
+- React                                ggg
 - Redux
 - npm
 - Chakra UI
