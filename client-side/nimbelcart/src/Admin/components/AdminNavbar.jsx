@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { useCallback, useState } from 'react';
 import { Dashboard } from './Sidebar/Dashboard';
+import Mangeproducts from './Sidebar/Mangeproducts';
 const LinkItems = [
   { name: 'Dashboard', icon: MdSpaceDashboard },
   { name: 'Add Product', icon:BiAddToQueue },
@@ -183,8 +184,9 @@ const handelsetSearchInputText= useCallback((value)=>{
       </HStack>
     </Flex>
     <Box border={"3px solid red"}mt={5} ml={[0,0,240]}>
-      <Text color={"white"}>123456789</Text>
       <Dashboard/>
+      <br/><br/>
+      <Mangeproducts/>
       <SearchBar query={SearchInputText} setQuary={handelsetSearchInputText} />
       </Box></>
   );
