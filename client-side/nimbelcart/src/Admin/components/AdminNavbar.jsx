@@ -1,11 +1,12 @@
-import {IconButton,Avatar, Box,CloseButton,Flex,HStack,VStack,Icon,useColorModeValue,Drawer, DrawerContent,Text,useDisclosure, Menu,
+import {IconButton,Avatar, Box,CloseButton,Flex,HStack,Icon,useColorModeValue,Drawer, DrawerContent,useDisclosure, Menu,
   MenuButton,MenuDivider,MenuItem,MenuList,Image, Button, useColorMode, Divider, InputGroup, InputLeftElement, Input} from '@chakra-ui/react';
-import {FiTrendingUp,FiCompass,FiStar,FiSettings, FiMenu,FiBell,FiChevronDown} from 'react-icons/fi';
+import {FiStar, FiMenu,FiBell,FiChevronDown} from 'react-icons/fi';
 import LOGO from "../../Assets/nimbleCart_logo_rect.jpg"
 import { MdSpaceDashboard } from 'react-icons/md';
 import { BiAddToQueue,BiLineChart ,BiSupport} from 'react-icons/bi';
 import { AiFillDatabase,AiOutlineBarChart} from 'react-icons/ai'
 import { TiChartPie} from 'react-icons/ti'
+import { MdVideoSettings} from 'react-icons/md'
 import { FcMindMap,FcFaq} from 'react-icons/fc'
 import { SiGooglecalendar } from "react-icons/si"
 import { MoonIcon, SearchIcon, SunIcon } from '@chakra-ui/icons';
@@ -25,7 +26,8 @@ const LinkItems = [
   {name: 'Line Chart', icon: BiLineChart},
   {name: 'Geography Chart', icon: FcMindMap},
   {name: 'Admin Support', icon:BiSupport},
-  {name: 'FAQ', icon: FcFaq}
+  {name: 'FAQ', icon: FcFaq},
+  {name:"Tutorial",icon:MdVideoSettings}
 ];
 
 
@@ -71,9 +73,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
           
         </NavItem>
       ))}
+      <Flex pt={2} align={"center"} justify={"center"}>
        <Button onClick={toggleColorMode}>
                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />} 
                    </Button>
+                   </Flex>
     </Box>
     </Flex>
   );
@@ -143,9 +147,9 @@ const handelsetSearchInputText= useCallback((value)=>{
       <HStack spacing={{ base: '0', md: '6' }}>
       
                    <InputGroup display={{ base: 'none', md: 'flex' }}  >
-                      <Input focusBorderColor='#d0234f'  display={{ base: 'none', md: 'flex' }}  color={"whiteAlpha.900"} value={ SearchInputText}  onChange={handelQuery}  
-                             type='text' htmlSize={12} w={"auto"} placeholder='Search' />
-                             <InputLeftElement pointerEvents='none' children={<SearchIcon/>} /> 
+                      <Input  focusBorderColor='#d0234f'  display={{ base: 'none', md: 'flex' }}  color={"whiteAlpha.900"} value={ SearchInputText}  onChange={handelQuery}  
+                             type='text' htmlSize={16} w={"auto"} placeholder='Search' />
+                             <InputLeftElement pointerEvents='none'  children={<SearchIcon/>} /> 
                   </InputGroup> 
         <IconButton
         _focus={{color:"#d0234f"}}
