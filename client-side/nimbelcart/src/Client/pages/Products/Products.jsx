@@ -144,7 +144,7 @@ const Products = ({ category }) => {
                 />
                 <Text mt={2}>{el.title}</Text>
                 <Text className="subtitle">{el.subtitle}</Text>
-                <Box display="flex" mt={2} alignItems="center">
+                <Box display="flex" mt={2} justifyContent="center">
                   {Array(5)
                     .fill("")
                     .map((_, i) => (
