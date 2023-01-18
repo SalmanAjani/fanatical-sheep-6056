@@ -138,7 +138,7 @@ const handelsetSearchInputText= useCallback((value)=>{
         aria-label="open menu"
         icon={<FiMenu />}
       />
-      <Link to="/"><Image w={{ base: "65px", md: 'none' }} display={{ base: 'flex', md: 'none' }} borderRadius={5} src={LOGO} alt="Nimble Cart"/></Link>
+      <Link to="/"><Image ml={7} w={{ base: "65px", md: 'none' }} display={{ base: 'flex', md: 'none' }} borderRadius={5} src={LOGO} alt="Nimble Cart"/></Link>
       <HStack spacing={{ base: '0', md: '6' }}>
       
                    <InputGroup display={{ base: 'none', md: 'flex' }}  >
@@ -182,7 +182,7 @@ const handelsetSearchInputText= useCallback((value)=>{
         </Flex>
       </HStack>
     </Flex>
-    <Box border={"3px solid red"}mt={5} ml={[0,240,240]}>
+    <Box border={"3px solid red"}mt={5} ml={[0,0,240]}>
       <Text color={"white"}>123456789</Text>
       <Dashboard/>
       <SearchBar query={SearchInputText} setQuary={handelsetSearchInputText} />
