@@ -1,0 +1,44 @@
+.hovereffect:hover {
+  color: black;
+}
+
+.sortsec {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+  .sortsec {
+    justify-content: space-around;
+  }
+}
+
+.subtitle {
+  color: gray;
+}
+
+.subtitle:hover {
+  color: black;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin: auto;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .price {
+    display: block;
+  }
+}
+
+.eldiv:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
