@@ -14,6 +14,7 @@ export const PopUps = ()=> {
           <ModalCloseButton />
           <ModalBody>
           Shop smart, shop nimble
+          
           </ModalBody>
         </ModalContent>
       </Modal>
