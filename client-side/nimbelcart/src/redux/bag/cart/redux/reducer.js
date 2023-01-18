@@ -6,12 +6,14 @@ import {
 } from "./actionTypes";
 
 const initialState = {
-  items: JSON.parse(localStorage.getItem("cart-item")) || [],
+  items:[],
   loading: false,
   error: false
 };
 let arr=[]
 export const cartReducer = (state = initialState, action) => {
+ 
+  
   switch (action.type) {
     case LOADING_STATE: {
       return {
@@ -30,7 +32,8 @@ export const cartReducer = (state = initialState, action) => {
 
     case GET_DATA_SUCCESSFULLY: {
       return {
-        ...state,
+        error:false,
+        items:action.payload,
         loading: false
       };
     }

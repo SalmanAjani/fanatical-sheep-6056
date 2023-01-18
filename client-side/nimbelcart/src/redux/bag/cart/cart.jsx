@@ -6,20 +6,22 @@ import CheckoutTab from "./checkoutTab";
 // import { getData } from "./redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react";
-import { getData } from "./redux/actions";
+import { addtocart, getData } from "./redux/actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { loading, error ,items} = useSelector((store) => store.cart);
+  const { loading, error,items} = useSelector((store) => store.carts);
   // const items = JSON.parse(localStorage.getItem("cart-item")) || [];
-  items.push(
+  // items.push(
     
-  );
+  // );
   console.log(items);
-
+ 
   React.useEffect(() => {
+   
     dispatch(getData());
-  }, []);
+
+  }, [dispatch]);
 
   if (loading) {
     return (
