@@ -4,10 +4,12 @@ import { authReducer } from "./auth/reducer";
 import { cartReducer } from "./bag/reducer";
 import { productReducer } from "./product/reducer";
 import { prodReducer } from "./products/ProdReducer";
+import{reducer as Adminreducer} from "./app/admin/reducer"
 export const rootReducer = combineReducers({
   auth: authReducer,
   products: productReducer,
   carts: cartReducer,
   orders: orderReducer,
   prodManager: prodReducer,
+  Adminreducer
 });
