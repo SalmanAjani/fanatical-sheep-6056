@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-
 import { orderReducer } from "./order/reducer";
 import { authReducer } from "./auth/reducer";
 import { cartReducer } from "./bag/reducer";
