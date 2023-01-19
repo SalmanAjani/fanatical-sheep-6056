@@ -79,6 +79,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />} 
                    </Button>
                    </Flex>
+                   <Button><MapChart/>gg</Button>
     </Box>
     </Flex>
   );

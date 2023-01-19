@@ -7,7 +7,7 @@ import { SEARCH_ADMIN_DATA } from '../../redux/app/admin/action';
 
 
 const SearchBar = ({query}) => {
-   
+
     const [suggestion,setSuggestion]=useState([]);
     const dispatch =useDispatch();
     const PRODUCTS=useSelector((state)=> state.Adminreducer.adminProducts)
