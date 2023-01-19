@@ -1,5 +1,8 @@
 import React from 'react'
-import { AdminNavbar } from '../components/AdminNavbar'
+import AdminNavbar from '../Global/AdminNavbar'
+
+
+
 
 
 const AdminPage = () => {

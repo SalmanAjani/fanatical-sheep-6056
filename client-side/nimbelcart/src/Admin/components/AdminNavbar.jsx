@@ -15,6 +15,7 @@ import SearchBar from './SearchBar';
 import { useCallback, useState } from 'react';
 import { Dashboard } from './Sidebar/Dashboard';
 import Mangeproducts from './Sidebar/Mangeproducts';
+import MapChart from './Sidebar/MapChart';
 const LinkItems = [
   { name: 'Dashboard', icon: MdSpaceDashboard },
   { name: 'Add Product', icon:BiAddToQueue },
@@ -78,6 +79,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />} 
                    </Button>
                    </Flex>
+                   <Button><MapChart/>gg</Button>
     </Box>
     </Flex>
   );

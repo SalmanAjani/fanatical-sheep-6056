@@ -31,7 +31,7 @@ const Header = ({
 
       <Box className="sortsec">
         <Select
-          width="170px"
+          width="200px"
           border="none"
           color="grey"
           onChange={handlechange}

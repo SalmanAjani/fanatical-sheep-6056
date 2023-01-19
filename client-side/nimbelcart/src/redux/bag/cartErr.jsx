@@ -47,7 +47,8 @@ const CartErr = () => {
   );
 };
 
-// export default CartErr;
+export default CartErr;
+
 
 
 // import { Box, Button, Text, Tooltip, Image } from "@chakra-ui/react";
@@ -99,4 +100,5 @@ const CartErr = () => {
 //   );
 // };
 
-export default CartErr;
+
+
