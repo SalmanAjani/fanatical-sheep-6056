@@ -1,7 +1,7 @@
 import { Box, Button, Text, Tooltip, Image } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { addtocart } from "./redux/actions";
+
 
 
 
