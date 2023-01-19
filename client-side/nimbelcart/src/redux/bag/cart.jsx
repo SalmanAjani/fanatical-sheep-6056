@@ -5,8 +5,8 @@ import SingleCart from "./singleCart";
 import CheckoutTab from "./checkoutTab";
 // import { getData } from "./redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react";
-import { addtocart, getData } from "./redux/actions";
+import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react"
+import { getData } from "./actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -65,15 +65,15 @@ const Cart = () => {
     </>
   );
 };
-import React from "react";
-import CartErr from "./cartErr";
-import EmptyCart from "./emptyCart";
-import SingleCart from "./singleCart";
-import CheckoutTab from "./checkoutTab";
-// import { getData } from "./redux/actions";
-import { useDispatch, useSelector } from "react-redux";
-import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react";
-import { addtocart, getData } from "./redux/actions";
+// import React from "react";
+// import CartErr from "./cartErr";
+// import EmptyCart from "./emptyCart";
+// import SingleCart from "./singleCart";
+// import CheckoutTab from "./checkoutTab";
+// // import { getData } from "./redux/actions";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react";
+// import { addtocart, getData } from "./redux/actions";
 
 // const Cart = () => {
 //   const dispatch = useDispatch();
