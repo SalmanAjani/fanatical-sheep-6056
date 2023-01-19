@@ -1,9 +1,13 @@
+
 import {
   legacy_createStore as createStore,
   applyMiddleware,
   compose,
 } from "redux";
 import thunk from "redux-thunk";
+
+
+
 import { rootReducer } from "./index.js";
 
 function saveToLocalStorage(store) {
@@ -35,4 +39,6 @@ export const store = createStore(
 );
 
 store.subscribe(() => saveToLocalStorage(store.getState()));
+
+
 
