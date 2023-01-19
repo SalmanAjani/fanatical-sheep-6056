@@ -32,8 +32,12 @@ const Navbar = () => {
              bg={useColorModeValue('gray.300', 'gray.900')} px={10} as="header">
                 <Flex h={16} justify={"space-between"} align={"center"}>
                     <HStack>
-                    <IconButton size={'md'}  icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'} display={{ md: 'none' }}onClick={isOpen ? onClose : onOpen}/>
+                    {/* <IconButton size={'md'}  icon={isOpen ? "" : <HamburgerIcon />} */}
+{isOpen? <Image  borderRadius={5} w={55} src={Weblogo} alt="Nimble Cart"/>:
+<IconButton   size={'md'}  icon={ <HamburgerIcon />}aria-label={'Open Menu'} display={{ md: 'none' }}onClick={isOpen ? onClose : onOpen}/>
+}
+
+            {/* // aria-label={'Open Menu'} display={{ md: 'none' }}onClick={isOpen ? onClose : onOpen}/> */}
                     <Image  display={{base:"none",md:"block"}} ml={[1330,0,1110]} w={50} src={Weblogo} alt="Nimble Cart"/>
                     </HStack>
                     <HStack>

@@ -5,8 +5,6 @@ import { Box, Button, Text, Tooltip, Image } from "@chakra-ui/react";
 const CartErr = () => {
   return (
     <>
-   
-   
     <Box align='center' py='12'>
       <Tooltip
         placement='right'
