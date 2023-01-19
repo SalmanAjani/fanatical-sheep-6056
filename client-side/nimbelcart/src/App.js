@@ -3,8 +3,8 @@ import Navbar from  './Client/NavBar/NavBar'
 function App() {
   return (
     <div className="App">
-      <AllRoutes />
       <Navbar />
+      <AllRoutes />
     </div>
   );
 }

@@ -55,7 +55,7 @@ function Navbar() {
             <InputRightElement
               children={<FiSearch color="tomato" />}
               pr="0.5em"
-              pt="0.5em"
+              
             />
           </InputGroup>
         </Flex>
