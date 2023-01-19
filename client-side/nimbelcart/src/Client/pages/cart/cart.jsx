@@ -7,7 +7,7 @@ import CheckoutTab from "./checkoutTab";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react"
-import { getData } from "./actions";
+import { getData } from "../../../redux/bag/actions";
 
 
 

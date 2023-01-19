@@ -5,10 +5,11 @@ import { productReducer } from "./product/reducer";
 import { prodReducer } from "./products/ProdReducer";
 
 
-import { cartReducer } from "./bag/cart/redux/reducer";
+
 
 
 import{reducer as Adminreducer} from "./app/admin/reducer"
+import { cartReducer } from "./bag/reducer";
 
 
 export const rootReducer = combineReducers({

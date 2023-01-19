@@ -7,7 +7,8 @@ import ProductDetails from "../Client/pages/Products/ProductDetails";
 
 
 import AdminPage from "../Admin/Pages/AdminPage";
-import Cart from "../redux/bag/cart";
+import Cart from "../Client/pages/cart/cart";
+
 
 export const AllRoutes = () => {
   return (
