@@ -2,11 +2,11 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Box, Button, CloseButton, Divider, Flex,  useColorMode, useColorModeValue ,Icon, Text} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { SideBarItems } from "../../Utils/SiderLink";
-export const Sidebar = ({isOpen,onClose, ...rest }) => {
+export const Sidebar = ({isopen,onClose, ...rest }) => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
-      <Flex  isOpen={isOpen} onClose={onClose}  mt={16}>
-      <Box isOpen={isOpen} onClose={onClose} zIndex={[0,1002,1002]}
+      <Flex  isopen={isopen} onClose={onClose}  mt={16}>
+      <Box isopen={isopen} onClose={onClose} zIndex={[0,1002,1002]}
         transition="3s ease" bg={useColorModeValue('gray.200', 'gray.900')} borderRight="1px"
         borderRightColor={useColorModeValue('gray.600', 'red.700')} w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest}>
         <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
