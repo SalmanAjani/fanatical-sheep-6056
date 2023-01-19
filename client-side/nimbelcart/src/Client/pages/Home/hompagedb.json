@@ -1,0 +1,96 @@
+{
+  "accordion":[
+    {
+      "id":1,
+      "heading":"NimbleCart - India’s Leading Online Shopping Experience, Brought to You by NimbleCart",
+      "content":"Online shopping with NimbleCart is quick, convenient and trouble-free. You can shop for the desired product right from the comfort of your home and get them delivered straight to your doorstep. Browse NimbleCart and get access to over 65 million products ranging from smartphones, tablets to laptops, sarees, kurtas & kurtis to t-shirts, sneakers, sport shoes to sandals, earrings, watches to fitness bands, chimneys, cookware to gas stoves, dairy products, baby products to makeup kits and many more."
+    },
+    {
+      "id":2,
+      "heading":"What are we offering on NimbleCart.com?",
+      "content":"NimbleCart strives hard to make your online shopping a more pleasant and cost-effective experience by providing the top quality products at the best price rates in India. Our collection of products consist of electronic appliances, clothes, grocery, home and kitchen products, backpacks, automobiles, books and stationery, to name a few. The super value bazaar offers an extensive range of grocery products like daily food staples, ready to cook food, high on nutrition food, beauty, make-up, personal care, health, baby care products and many more. Also take a look at the latest Automobile section that consists of cars, bikes, scooters, sports bikes, accessories, riding gear and automotive care."
+    },
+    {
+      "id":3,
+      "heading":"Benefits of shopping on NimbleCart.com",
+      "content":"User-Friendly: Leading online shopping experience in India which is simple and faster to load. Shop on the go and get the products delivered in just a few easy clicks. Safe & Secure Shopping: You need not worry about your account credentials or personal details.Each and every transaction at NimbleCart is securely processed and you can be rest assured that your money is in safe hands."
+    },
+    {
+      "id":4,
+      "heading":"Multiple Payment Options:",
+      "content":"Choose a payment option of your choice i.e. Credit/Debit Cards, Netbanking and UPI. Use NimbleCart Wallet for quick checkouts & hassle-free payments"
+    },
+    {
+      "id":5,
+      "heading":"24x7 Customer Care",
+      "content":" For all your queries and concerns regarding your shopping orders, head over to NimbleCart.com/care or call us at 01204606060 anytime The products paired with amazing deals are a topping on the cake that no one would want to miss. NimbleCart World Store offers access to imported products ranging from beauty and personal care, watches, jewellery and so much more that too at exclusive price rates."
+    }
+  
+  ],
+  "Womens":[
+    {
+      "id":1,
+      "title":"Cotton T-shirt",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15599320/2022/4/28/c06a6b1a-4e0b-43ed-ad2e-394b588a0d8b1651144480179-Difference-of-Opinion-Women-Black-Conversational-Printed-Pur-1.jpg"
+    },
+    {
+      "id":2,
+      "title":"Flared Jeans",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/15/98e4cd89-4c1a-40ed-a659-645f5c2d3f801608051833514-1.jpg"
+    },
+    {
+      "id":3,
+      "title":"Embroidered Kurta Set",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10942370/2022/4/19/ec7101dc-431b-47d2-9c86-d53fc4fda3681650365990558AnubhuteeWomenNavyBluePaisleyFloralEmbroideryKurtaSet1.jpg"
+    },
+    {
+      "id":4,
+      "title":"High-Rise Trousers",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19040144/2022/8/17/fe31ed52-9eda-4123-a704-dc39e0bad6011660707701748ADDYVEROWomenBlackHigh-RiseEasyWashTrousers1.jpg"
+    }
+  ],
+  "child":[
+    {
+      "id":1,
+      "title":"Cotton Clothing Set",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16954916/2022/9/12/5a6e83b4-9c48-4d6d-8f23-f2b7de66169f1662982988094YKBoysOrangeBlackMarvelPrintedCottonClothingSet1.jpg"
+    },
+    {
+      "id":2,
+      "title":"Hooded Sweatshirt",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15236486/2021/10/26/d5ccd8d6-0a08-4422-a0e9-58ccfc9d93081635249538404-UTH-by-Roadster-Boys-Sweatshirts-9261635249538125-1.jpg"
+    },
+    {
+      "id":3,
+      "title":"Applique T-shirt",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18945470/2022/7/2/6d732660-0482-4796-abff-6a3e38e1f2131656748432666Tshirts1.jpg"
+    },
+    {
+      "id":4,
+      "title":" Pyjamas & Blazer",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16334330/2021/12/2/5eb31306-337b-4db9-9089-ef45e0ed1f751638417222084ClothingSet1.jpg"
+    }
+  ],
+  "mens":[
+    {
+      "id":1,
+      "title":"Pullover Sweatshirt",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12817134/2020/11/7/6c19e91e-911e-4a01-8fef-94db92e30f1e1604727921718-HERENOW-Men-Sweatshirts-5491604727920321-1.jpg"
+    },
+    {
+      "id":2,
+      "title":"Men Colourblocked Joggers",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17394970/2022/5/12/400cfe3d-6a9a-45d8-8008-41ab431ce5721652350717156-Puma-Men-Track-Pants-3831652350716513-1.jpg"
+    },
+    {
+      "id":3,
+      "title":"Slim Fit Jeans",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2525011/2022/7/18/a99fc558-0245-419f-932b-efd5f1895d581658124980099-Roadster-Men-Black-Slim-Fit-Mid-Rise-Stretchable-Jeans-61416-1.jpg"
+    },
+    {
+      "id":4,
+      "title":"Casual Shirt",
+      "img":"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/10/15/5b9a1046-2369-4976-9ece-d8e0013e06fb1602716976713-1.jpg"
+    }
+  ]
+}
