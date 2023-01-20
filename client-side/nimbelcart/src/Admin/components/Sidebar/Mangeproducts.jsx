@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { DELETE_ADMIN_DATA, GET_ADMIN_DATA } from '../../../redux/app/admin/action';
 const Mangeproducts = () => {
  
-  const PRODUCTS= useSelector((state)=> state.AppReducer.products)
+  const PRODUCTS= useSelector((state)=> state.Adminreducer.adminProducts)
   const dispatch =useDispatch();
   const navigate = useNavigate()
   const handelDeletedata =(id)=>{
@@ -17,6 +17,7 @@ const Mangeproducts = () => {
       toast.success("Product  Remove Successfully")
       
   }
+  console.log(PRODUCTS,"prod");
   const handleEdit =(id,title)=>{
      navigate(`/${id}/${title}/edit`)
   }
