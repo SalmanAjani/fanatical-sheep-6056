@@ -25,8 +25,9 @@
 
 .price {
   display: flex;
-  justify-content: space-between;
-  width: 40%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 50%;
   margin: auto;
   padding-left: 10px;
   margin-top: 8px;

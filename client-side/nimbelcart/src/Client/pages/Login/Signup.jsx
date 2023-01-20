@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { Link } from "react-router-dom";
+import {useDispatch} from "react-redux"
 import signupimg from "./signup.png";
+import { registerUser } from "../../../redux/auth/action";
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
-    username: "",
     email: "",
     password: "",
-    gender: "empty",
   });
-
+  const dispatch = useDispatch();
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -19,7 +19,6 @@ const Signup = () => {
     if (
       formData.name.trim() !== "" &&
       formData.email.trim() !== "" &&
-      formData.username.trim() !== "" &&
       formData.password.trim() !== ""
     ) {
       if (
@@ -28,6 +27,7 @@ const Signup = () => {
       ) {
         alert("Name and password must be at least of 4 characters");
       } else {
+        dispatch(registerUser(formData));
       }
     } else {
       alert("Please enter all required fields");
@@ -53,19 +53,6 @@ const Signup = () => {
                 type="text"
                 placeholder="Full name"
               />
-              <input
-                name="username"
-                value={formData.username}
-                onChange={handleFormChange}
-                type="text"
-                placeholder="@username"
-              />
-              <select name="gender" onChange={handleFormChange}>
-                <option value="empty">Select gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
               <input
                 name="email"
                 value={formData.email}

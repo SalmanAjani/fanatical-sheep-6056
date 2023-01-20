@@ -6,7 +6,7 @@ export const registerUser = (userData) => async (dispatch) => {
   try {
     dispatch({ type: types.REGISTER_USER_REQUEST });
     const data = await axios.post(
-      `https://busy-rose-earthworm-cap.cyclic.app/user/new`,
+      `https://odd-tan-lizard-kit.cyclic.app/user/new`,
       userData
     );
     console.log(data.data);
@@ -53,7 +53,7 @@ export const authLogin = (data) => async (dispatch) => {
     dispatch({ type: types.LOGIN_USER_REQUEST });
 
     const res = await axios.post(
-      "https://busy-rose-earthworm-cap.cyclic.app/user/login",
+      "https://odd-tan-lizard-kit.cyclic.app/user/login",
       data
     );
     console.log(res);
