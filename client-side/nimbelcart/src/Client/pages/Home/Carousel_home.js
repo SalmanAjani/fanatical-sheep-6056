@@ -19,7 +19,7 @@ import './carousel.css'
 
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 export default function Carousel_home({data}) {
   console.log(data)
@@ -28,12 +28,16 @@ export default function Carousel_home({data}) {
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
         loop={true}
         pagination={{
           clickable: true,
         }}
         // navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation,Autoplay]}
         className="mySwiper"
         effect="fade"
       >
