@@ -4,7 +4,7 @@ import { Box, Grid, Center, Heading, Image} from "@chakra-ui/react";
 function GiftCards({ products, heading }) {
   return (
     <Box>
-      <Box mt="4em">
+      <Box mt="4em" >
         <Center>
           <Heading fontSize={{ sm: "1rem", md: "1.5rem", lg: "2rem" }} mb="1em">
             {heading}
@@ -14,8 +14,8 @@ function GiftCards({ products, heading }) {
           templateColumns={{base:"1fr 1fr",md:"1fr 1fr 1fr 1fr"}}
           gap="10px"
           w="95%"
-          m="auto"
-          mt="1em"
+          m="1em auto"
+         
           align={'center'}
         >
           {products.map((item) => (
