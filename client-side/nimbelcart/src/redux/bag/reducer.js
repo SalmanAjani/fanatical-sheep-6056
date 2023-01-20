@@ -2,7 +2,8 @@ import {
   LOADING_STATE,
   ERROR_STATE,
   GET_DATA_SUCCESSFULLY,
-  ADD_ITEM
+  ADD_ITEM,
+  UPDATE_QUANTITY
 } from "./actionTypes";
 
 const initialState = {
@@ -44,7 +45,14 @@ export const cartReducer = (state = initialState, action) => {
         loading: false
       };
     }
-
+case UPDATE_QUANTITY:{
+  let x=state.items.map((el)=>el._id===action.payload._id?el.quantity=action.payload.quantity:el)
+  console.log(x,"update")
+  return {
+    ...state ,
+    
+  }
+}
     default: {
       return state;
     }
