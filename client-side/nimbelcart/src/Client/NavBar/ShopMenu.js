@@ -5,6 +5,7 @@ import {
   Grid,
   Menu,
   MenuButton,
+  MenuItem,
   MenuList,
   Text,
 } from "@chakra-ui/react";
@@ -14,7 +15,7 @@ import { Link } from "react-router-dom";
 function ShopMenu() {
   return (
     <Box>
-      <Menu>
+      <Menu >
         <MenuButton border="none" bg="none">
           <Flex
             align={"center"}
@@ -37,10 +38,10 @@ function ShopMenu() {
           ml="2em"
           boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
           p="20px"
-          bg="transparent"
-          backdropFilter={"blur(50px)"}
-          zIndex={10}
+          bg="#fff"
+          zIndex={999}
         >
+          <MenuItem bg="#fff" z-zIndex={999}>
           <Grid gap="100px" templateColumns={"1fr 5fr"}>
             <Box borderRight={"1px solid #d6d6d6"} pr="100px">
               <Text color="tomato">Apparels</Text>
@@ -60,6 +61,7 @@ function ShopMenu() {
               </Box>
             </Flex>
           </Grid>
+          </MenuItem>
         </MenuList>
       </Menu>
     </Box>

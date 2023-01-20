@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -18,13 +18,18 @@ import {
 import logo from "../../Assets/nimbleCart_logo_rect.jpg";
 import ShopMenu from "./ShopMenu";
 import { Link } from "react-router-dom";
+
+
 function Navbar() {
+
+  
+
   return (
     <Box position="sticky" top="0" bg="#fff">
       {/* ?logo */}
       <Flex justify={"center"} align={"center"} mt="1em">
         <Box w={{ base: "60px", sm: "80px", md: "100px", lg: "150px" }}>
-          <Image src={logo} alt="logo" w={"100%"} />
+         <Link to="/"> <Image src={logo} alt="logo" w={"100%"} /></Link>
         </Box>
       </Flex>
 
