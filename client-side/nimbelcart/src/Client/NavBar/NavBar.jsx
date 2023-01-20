@@ -19,17 +19,16 @@ import logo from "../../Assets/nimbleCart_logo_rect.jpg";
 import ShopMenu from "./ShopMenu";
 import { Link } from "react-router-dom";
 
-
 function Navbar() {
-
-  
-
   return (
     <Box position="sticky" top="0" bg="#fff">
       {/* ?logo */}
       <Flex justify={"center"} align={"center"} mt="1em">
         <Box w={{ base: "60px", sm: "80px", md: "100px", lg: "150px" }}>
-         <Link to="/"> <Image src={logo} alt="logo" w={"100%"} /></Link>
+          <Link to="/">
+            {" "}
+            <Image src={logo} alt="logo" w={"100%"} />
+          </Link>
         </Box>
       </Flex>
 
@@ -72,8 +71,11 @@ function Navbar() {
           ml="1em"
           display={{ base: "none", sm: "flex" }}
         >
-          <Flex align={"center"} alignItems="center" gap="5px" display="none">
+          <Flex align={"center"} alignItems="center" gap="5px">
             <RiAdminFill color="tomato" />
+            <Box mt="3px" fontSize={[10, 14]}>
+              <Link to="/admin/dashboard">Admin</Link>
+            </Box>
           </Flex>
 
           <Flex align={"center"} alignItems="center" gap="5px">
