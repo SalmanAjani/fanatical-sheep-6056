@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import loginIng from "./login.jpg";
+import { authLogin } from "../../../redux/auth/action";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -12,12 +14,14 @@ const Login = () => {
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const dispatch = useDispatch();
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (formData.email.trim() !== "" && formData.password.trim() !== "") {
       if (formData.password.trim().length < 4) {
         alert("Password must be at least of 4 characters");
       } else {
+        dispatch(authLogin(formData));
       }
     } else {
       alert("Please enter all required fields");

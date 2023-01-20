@@ -4,6 +4,9 @@ import Home from "../Client/pages/Home/Home";
 import Products from "../Client/pages/Products/Products";
 import ProductDetails from "../Client/pages/Products/ProductDetails";
 import Cart from "../Client/pages/cart/cart";
+import Signup from "../Client/pages/Login/Signup";
+import Login from "../Client/pages/Login/Login";
+import MyOrders from "../Client/pages/Home/MyOrders";
 
 // Routes for addmin---------------------------------------------------------------->
 import AdminPage from "../Admin/Pages/AdminPage";
@@ -25,6 +28,9 @@ export const AllRoutes = () => {
       <Route path="/kidproduct" element={<Products category="Kids" />} />
 
       <Route path="/cart" element={<Cart />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/order" element={<MyOrders />} />
 
       <Route path="/admin" element={<AdminPage />} />
       <Route path="/admin/addproduct" element={<AdminAddProduct />} />
