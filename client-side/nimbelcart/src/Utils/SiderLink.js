@@ -13,10 +13,10 @@ export const SideBarItems = [
     { name: 'Favourites', icon: FiStar,to:"/admin/favourits" },
     { name: 'Clanders', icon: SiGooglecalendar,to:"/admin/calenders" },
     {name: 'Pie Chart', icon: TiChartPie,to:"/admin/piechart"},
-    {name: 'Bar Chart', icon: AiOutlineBarChart,to:"/adminbarchart/"},
+    {name: 'Bar Chart', icon: AiOutlineBarChart,to:"/admin/barchart/"},
     {name: 'Line Chart', icon: BiLineChart,to:"/admin/linechart"},
     {name: 'Geography Chart', icon: FcMindMap,to:"/admin/geographychart"},
     {name: 'Admin Support', icon:BiSupport,to:"/admin/support"},
-    {name: 'FAQ', icon: FcFaq,to:"/admin/faq"},
+    {name: 'FAQ', icon: FcFaq,to:"/admin/frequentlyaskedquestions"},
     {name:"Tutorial",icon:MdVideoSettings,to:"/admin/tutorial"}
   ];
