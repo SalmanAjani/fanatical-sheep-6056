@@ -12,7 +12,6 @@ import { Editproduct } from "../Admin/components/Sidebar/Editproduct";
 import { GoogleCalender } from "../Admin/components/Sidebar/GoogleCalender";
 import FAQPage from "../Admin/Pages/FAQPage";
 
-
 // ===================================================================================
 
 export const AllRoutes = () => {
@@ -25,10 +24,10 @@ export const AllRoutes = () => {
       <Route path="/cart" element={<Cart />} />
 
       <Route path="/admin" element={<AdminPage />} />
-      <Route path="/admin/addproduct" element={<AdminAddProduct/>}/>
-      <Route path="/admin/calender" element={<GoogleCalender/>}/>
-      <Route path="/admin/frequentlyaskedquestion" element={<FAQPage/>}/>
-      <Route path="/:displayid/:id/:title/edit" element={<Editproduct/>} />
+      <Route path="/admin/addproduct" element={<AdminAddProduct />} />
+      <Route path="/admin/calender" element={<GoogleCalender />} />
+      <Route path="/admin/frequentlyaskedquestion" element={<FAQPage />} />
+      <Route path="/:displayid/:id/:title/edit" element={<Editproduct />} />
     </Routes>
   );
 };

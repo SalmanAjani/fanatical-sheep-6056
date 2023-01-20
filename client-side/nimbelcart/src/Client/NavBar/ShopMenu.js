@@ -9,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function ShopMenu() {
   return (
@@ -37,7 +38,7 @@ function ShopMenu() {
           boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
           p="20px"
           bg="transparent"
-          backdropFilter={'blur(50px)'}
+          backdropFilter={"blur(50px)"}
           zIndex={10}
         >
           <Grid gap="100px" templateColumns={"1fr 5fr"}>
@@ -45,14 +46,20 @@ function ShopMenu() {
               <Text color="tomato">Apparels</Text>
             </Box>
             <Flex w="50vw" direction={"column"} align="start" gap="10px">
-              <Box>Fashion</Box>
-              <Box>Men's</Box>
-              <Box>Women's</Box>
-              <Box>Kids</Box>
-              <Box>Beauty & Health</Box>
-              <Box>Jewelry</Box>
+              <Box>
+                <Link to="/products">Fashion</Link>
+              </Box>
+              <Box>
+                <Link to="/menproduct">Men's</Link>
+              </Box>
+              <Box>
+                <Link to="/womenproduct">Women's</Link>
+              </Box>
+              <Box>
+                <Link to="/kidproduct">Kids</Link>
+              </Box>
             </Flex>
-          </Grid>{" "}
+          </Grid>
         </MenuList>
       </Menu>
     </Box>
