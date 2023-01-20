@@ -3,12 +3,17 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../Client/pages/Home/Home";
 import Products from "../Client/pages/Products/Products";
 import ProductDetails from "../Client/pages/Products/ProductDetails";
-
-
-
-import AdminPage from "../Admin/Pages/AdminPage";
 import Cart from "../Client/pages/cart/cart";
 
+// Routes for addmin---------------------------------------------------------------->
+import AdminPage from "../Admin/Pages/AdminPage";
+import AdminAddProduct from "../Admin/Pages/AdminAddProduct";
+import { Editproduct } from "../Admin/components/Sidebar/Editproduct";
+import { GoogleCalender } from "../Admin/components/Sidebar/GoogleCalender";
+import FAQPage from "../Admin/Pages/FAQPage";
+
+
+// ===================================================================================
 
 export const AllRoutes = () => {
   return (
@@ -20,6 +25,10 @@ export const AllRoutes = () => {
       <Route path="/cart" element={<Cart />} />
 
       <Route path="/admin" element={<AdminPage />} />
+      <Route path="/admin/addproduct" element={<AdminAddProduct/>}/>
+      <Route path="/admin/calender" element={<GoogleCalender/>}/>
+      <Route path="/admin/frequentlyaskedquestion" element={<FAQPage/>}/>
+      <Route path="/:displayid/:id/:title/edit" element={<Editproduct/>} />
     </Routes>
   );
 };
