@@ -21,6 +21,8 @@ const Cart = () => {
   // items.push(
     
   // );
+  let user=JSON.parse(localStorage.getItem("user"));
+console.log({userid:user._id},"user")
   console.log(items);
  
   React.useEffect(() => {

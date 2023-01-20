@@ -20,9 +20,12 @@ import ShopMenu from "./ShopMenu";
 import { Link } from "react-router-dom";
 
 
+
+
 function Navbar() {
 
   
+
 
   return (
     <Box position="sticky" top="0" bg="#fff">

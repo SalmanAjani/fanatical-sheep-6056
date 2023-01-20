@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getData, removed, updated } from "../../../redux/bag/actions";
 
 const ProductDetails = ({ actualPrice }) => {
@@ -59,7 +59,9 @@ const ProductDetails = ({ actualPrice }) => {
 
 const SingleCart = ({ _id, images, discounted_price, title, quantity }) => {
   const [value, setValue] = React.useState(1);
-  const [quan, setQuan] = React.useState(+quantity);
+  // const { loading, error,items} = useSelector((store) => store.carts);
+
+  const [quan, setQuan] = React.useState(quantity);
   const [length, setLength] = React.useState(1);
   const [internalValue, setInternalValue] = useControllableState({
     value,
@@ -89,12 +91,16 @@ const SingleCart = ({ _id, images, discounted_price, title, quantity }) => {
   };
   const handlequantity = (id, quantity) => {
     dispatch(updated(id, quantity));
+    let x=quantity.quantity
+    setQuan(x)
     dispatch(getData());
   };
 
   const removeItem = (id) => {
     dispatch(removed(id));
     dispatch(getData());
+  
+    
   };
 
   return (
@@ -127,7 +133,7 @@ const SingleCart = ({ _id, images, discounted_price, title, quantity }) => {
                   color="black"
                   borderRadius="sm"
                   bg="blackAlpha.300"
-                  isDisabled={quantity === 1}
+                  isDisabled={quan === 1}
                   _disabled={{
                     bg: "gray.100",
                     color: "gray.600",
@@ -136,7 +142,8 @@ const SingleCart = ({ _id, images, discounted_price, title, quantity }) => {
                   icon={<MinusIcon />}
                   onClick={() => {
                     handlequantity(_id, { quantity: quan - 1 });
-                    setQuan(quan - 1);
+                 
+                    
                   }}
                 />
                 <Button
@@ -167,7 +174,7 @@ const SingleCart = ({ _id, images, discounted_price, title, quantity }) => {
                   icon={<AddIcon />}
                   onClick={() => {
                     handlequantity(_id, { quantity: quan + 1 });
-                    setQuan(quan + 1);
+                   
                   }}
                 />
               </Stack>

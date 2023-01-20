@@ -3,7 +3,8 @@ import {
   ERROR_STATE,
   GET_DATA_SUCCESSFULLY,
   ADD_ITEM,
-  UPDATE_QUANTITY
+  UPDATE_QUANTITY,
+  REMOVE_ITEM
 } from "./actionTypes";
 
 const initialState = {
@@ -50,6 +51,15 @@ case UPDATE_QUANTITY:{
   console.log(x,"update")
   return {
     ...state ,
+    items:x
+    
+  }
+}
+case REMOVE_ITEM:{
+  let x=state.items.filter((el)=>el._id!==action.payload.id)
+  return {
+    ...state ,
+    items:x
     
   }
 }

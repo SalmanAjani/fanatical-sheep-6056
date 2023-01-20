@@ -211,7 +211,7 @@ const CheckoutTab = ({ items }) => {
                 color="blue.800"
               >
                 {price > 0
-                  ? `₹${price}`
+                  ? `₹${price.toFixed(2)}`
                   : total() < 1000
                   ? `₹${total() + 50}`
                   : `₹${total().toLocaleString("en-US")}`}
