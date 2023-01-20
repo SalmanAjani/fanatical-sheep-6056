@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import {
   Box,
@@ -28,14 +27,19 @@ import data from "../../../Assets/data/products.json";
 
 const ProductDetails = () => {
   let element = JSON.parse(localStorage.getItem("element"));
-  const navigate = useNavigate();
   const toast = useToast();
 
   useEffect(() => {
     element = JSON.parse(localStorage.getItem("element")) || {};
   }, [element]);
 
-  const handleAdd = (el) => {
+  const handleAdd = (data) => {
+    let dataObj = {
+      title: data.title,
+      images: data.images[0],
+      discounted_price: data.discounted_price,
+      quantity: data.quantity,
+    };
     toast({
       position: "top-right",
       title: "Product added to cart.",
@@ -43,16 +47,15 @@ const ProductDetails = () => {
       duration: 9000,
       isClosable: true,
     });
-    fetch("https://nyresa-database.vercel.app/productlist", {
+    fetch("https://odd-tan-lizard-kit.cyclic.app/cart", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-Type": "application/json",
       },
-      body: JSON.stringify(el),
+      body: JSON.stringify(dataObj),
     })
-      .then((res) => {
-        res.json();
-      })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
 
