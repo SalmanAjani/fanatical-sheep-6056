@@ -63,11 +63,13 @@ const Cart = () => {
             </Text>
           </HStack>
           {items.map((item) => (
-            <SingleCart key={item.name} items={items} {...item} />
+            <SingleCart key={item._id} items={items} {...item} />
           ))}
         </Stack>
         <CheckoutTab items={items} />
       </Stack>
+      
+      
     </>
   );
 };

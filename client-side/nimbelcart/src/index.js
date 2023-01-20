@@ -10,12 +10,13 @@ import { Provider as ReduxProvider } from "react-redux";
 
 
 import { store } from "./redux/store";
+import { theme } from "./Client/pages/cart/themeconfig";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 
 
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
     <BrowserRouter>
       <ReduxProvider store={store}>
         <App />
