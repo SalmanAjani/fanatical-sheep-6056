@@ -21,6 +21,7 @@ import {  NavLink } from "react-router-dom";
 const CheckoutTab = ({ items }) => {
   const [value, setValue] = React.useState("");
   const [flag, setFlag] = React.useState(false);
+  const [price,setPrice]=React.useState(0)
   const toast = useToast();
 
   const handleChange = (e) => {
@@ -31,12 +32,12 @@ const CheckoutTab = ({ items }) => {
     let modifiedPrices = [];
     items.map((item) => {
       let newPrice;
-      if (typeof item.price === "string" && item.price.includes("₹")) {
-        newPrice = item.price.split(".")[0];
+      if (typeof item.discounted_price === "string" && item.discounted_price.includes("₹")) {
+        newPrice = item.discounted_price.split(".")[0];
         newPrice = newPrice.split("₹")[1];
         newPrice = Number(newPrice.split(",").join(""));
         modifiedPrices.push(newPrice*item.quantity);
-      } else modifiedPrices.push(+item.price*item.quantity);
+      } else modifiedPrices.push(+item.discounted_price*item.quantity);
       return modifiedPrices;
     });
 
@@ -44,29 +45,33 @@ const CheckoutTab = ({ items }) => {
     return totalPrice;
   };
 
-  // let updatedPrice = total();
-  // console.log(updatedPrice);
+  let updatedPrice = total();
+  console.log(updatedPrice);
 
-  // const handleCoupen = (e) => {
-  //   e.preventDefault();
-  //   if (value === "MASAI30" && !flag) {
-  //     setFlag(true);
-  //     updatedPrice -= updatedPrice * 0.3;
-  //     return toast({
-  //       title: "Hurrray, Your coupen has been applied!",
-  //       description: "",
-  //       status: "success",
-  //       duration: 3000
-  //     });
-  //   } else {
-  //     return toast({
-  //       title: "Invalid Coupen: Please try another!",
-  //       description: "",
-  //       status: "error",
-  //       duration: 3000
-  //     });
-  //   }
-  // };
+  const handleCoupen = (e) => {
+    e.preventDefault();
+    if (value === "MASAI30" && !flag) {
+      setFlag(true);
+      let x= updatedPrice * 0.3;
+setPrice(updatedPrice-x)
+setValue("")
+      return toast({
+        title: "Hurrray, Your coupen has been applied!",
+        description: "",
+        status: "success",
+        duration: 3000
+      });
+     
+    } else {
+      setValue("")
+      return toast({
+        title: "Invalid Coupen: Please try another!",
+        description: "",
+        status: "error",
+        duration: 3000
+      });
+    }
+  };
 
   return (
     <>
@@ -116,7 +121,7 @@ const CheckoutTab = ({ items }) => {
                   borderRadius='none'
                   onChange={handleChange}
                 />
-                <FormLabel color='blue.500'>Coupen Code</FormLabel>
+                <FormLabel color='blue.500' >Coupen Code</FormLabel>
                 <Button
                   bg='white'
                   type='submit'
@@ -137,6 +142,7 @@ const CheckoutTab = ({ items }) => {
                     outlineOffset: "0px",
                     outlineColor: "blue.500"
                   }}
+                  onClick={(e)=>handleCoupen(e)}
                 >
                   APPLY
                 </Button>
@@ -176,9 +182,9 @@ const CheckoutTab = ({ items }) => {
             <Text>Delivery Charges</Text>
             <Text
               fontWeight='semibold'
-              color={total() < 500 ? "black" : "green.500"}
+              color={total() < 1000 ? "black" : "green.500"}
             >
-              {total() < 500 ? "₹50" : "FREE"}
+              {total() < 1000 ? "₹50" : "FREE"}
             </Text>
           </Stack>
           <Stack
@@ -197,8 +203,7 @@ const CheckoutTab = ({ items }) => {
               fontWeight='semibold'
               color='blue.800'
             >
-              {total() < 500
-                ? `₹${total() + 50}`
+              {price>0?`₹${price}`:total() < 1000 ? `₹${total() + 50}`
                 : `₹${total().toLocaleString("en-US")}`}
             </Text>
           </Stack>

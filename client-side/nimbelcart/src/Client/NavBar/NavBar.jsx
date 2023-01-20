@@ -17,12 +17,13 @@ import {
 } from "react-icons/bs";
 import logo from "../../Assets/nimbleCart_logo_rect.jpg";
 import ShopMenu from "./ShopMenu";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
-    <Box position="sticky" top='0' bg="#fff">
+    <Box position="sticky" top="0" bg="#fff">
       {/* ?logo */}
       <Flex justify={"center"} align={"center"} mt="1em">
-        <Box w={{ base:"60px",sm: "80px", md: "100px", lg: "150px" }}>
+        <Box w={{ base: "60px", sm: "80px", md: "100px", lg: "150px" }}>
           <Image src={logo} alt="logo" w={"100%"} />
         </Box>
       </Flex>
@@ -55,33 +56,42 @@ function Navbar() {
             <InputRightElement
               children={<FiSearch color="tomato" />}
               pr="0.5em"
-              
             />
           </InputGroup>
         </Flex>
 
         {/* cart-login */}
-        <Flex justify={"space-between"} gap="1em" ml="1em" display={{base:'none',sm:"flex"}}>
-
+        <Flex
+          justify={"space-between"}
+          gap="1em"
+          ml="1em"
+          display={{ base: "none", sm: "flex" }}
+        >
           <Flex align={"center"} alignItems="center" gap="5px" display="none">
             <RiAdminFill color="tomato" />
           </Flex>
 
           <Flex align={"center"} alignItems="center" gap="5px">
-            <BsFileText color="tomato" h={[100,200,300]} />
-            <Box mt="3px"  fontSize={[10,14]}>My Orders</Box>
+            <BsFileText color="tomato" h={[100, 200, 300]} />
+            <Box mt="3px" fontSize={[10, 14]}>
+              <Link to="/order">My Orders</Link>
+            </Box>
           </Flex>
 
           <Flex align={"center"} alignItems="center" gap="5px">
-            <BsHandbag color="tomato" h={[100,200,300]} />
-            <Box mt="3px"  fontSize={[10,14]}>No Items in the bag</Box>
+            <BsHandbag color="tomato" h={[100, 200, 300]} />
+            <Box mt="3px" fontSize={[10, 14]}>
+              {" "}
+              <Link to="/cart">No Items in the bag</Link>
+            </Box>
           </Flex>
 
           <Flex align={"center"} alignItems="center" gap="5px">
-            <BsFillEmojiSunglassesFill color="tomato" h={[100,200,300]} />
-            <Box mt="3px" fontSize={[10,14]}>Login/Sign up</Box>
+            <BsFillEmojiSunglassesFill color="tomato" h={[100, 200, 300]} />
+            <Box mt="3px" fontSize={[10, 14]}>
+              <Link to="/signup">Sign up</Link>
+            </Box>
           </Flex>
-
         </Flex>
       </Flex>
     </Box>
