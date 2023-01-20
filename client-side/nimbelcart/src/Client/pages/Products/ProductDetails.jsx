@@ -155,28 +155,32 @@ const ProductDetails = () => {
               </Box>
             </Stack>
 
-            <Button
-              rounded={"none"}
-              w={"md"}
-              mt={8}
-              size={"lg"}
-              py={"7"}
-              bg={useColorModeValue("gray.900", "gray.50")}
-              color={useColorModeValue("white", "gray.900")}
-              textTransform={"uppercase"}
-              _hover={{
-                transform: "translateY(2px)",
-                boxShadow: "lg",
-              }}
-              onClick={() => handleAdd(element, element.id)}
-            >
-              Add to cart
-            </Button>
+            <Box textAlign={{ base: "center", lg: "left" }}>
+              <Button
+                rounded={"none"}
+                w={"full"}
+                mt={8}
+                size={"lg"}
+                py={"7"}
+                bg={useColorModeValue("gray.900", "gray.50")}
+                color={useColorModeValue("white", "gray.900")}
+                textTransform={"uppercase"}
+                _hover={{
+                  transform: "translateY(2px)",
+                  boxShadow: "lg",
+                }}
+                onClick={() => handleAdd(element, element.id)}
+              >
+                Add to cart
+              </Button>
+            </Box>
 
-            <Stack direction="row" alignItems="center">
-              <MdLocalShipping />
-              <Text>2-3 business days delivery</Text>
-            </Stack>
+            <Box textAlign={{ base: "center", lg: "left" }}>
+              <Stack alignItems={{ base: "center", lg: "left" }}>
+                <MdLocalShipping />
+                <Text>2-3 business days delivery</Text>
+              </Stack>
+            </Box>
           </Stack>
         </SimpleGrid>
       </Container>
