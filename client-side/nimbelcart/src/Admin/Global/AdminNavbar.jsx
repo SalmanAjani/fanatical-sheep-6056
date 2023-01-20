@@ -19,7 +19,7 @@ import {
   DrawerContent,
   Menu,
 } from "@chakra-ui/react";
-import { CloseIcon, HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import Weblogo from "../.././Assets/nimbleCart_logo_rect.jpg";
 import { useCallback } from "react";
@@ -27,6 +27,7 @@ import { FiBell, FiChevronDown } from "react-icons/fi";
 import { Sidebar } from "./SideBar";
 import { useDispatch, useSelector } from "react-redux";
 import { GET_ADMIN_DATA } from "../../redux/app/admin/action";
+import { SearchBar } from "../components/SearchBar";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -144,7 +145,9 @@ const Navbar = () => {
             </HStack>
           </HStack>
         </Flex>
+       <Flex m={0} justify={"end"} pr={500}> <SearchBar query={SearchInputText} setQuary={handelsetSearchInputText} /></Flex>
       </Box>
+     
       <Sidebar
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}

@@ -79,9 +79,9 @@ export const ADD_ADMIN_DATA =(payload) =>(dispatch)=>{
 }
 
 // EDIT ADMIN DATA FUNCTION -------------------------------------------------------------------------->
-export const EDIT_ADMIN_DATA =(id) =>(dispatch)=>{
+export const EDIT_ADMIN_DATA =(id,payload) =>(dispatch)=>{
     dispatch(EDIT_ADMIN_DATA_LOADING_fn());
-    return axios.patch(`${ADMIN_URL}/${id}`)
+    return axios.patch(`https://nyresa-database.vercel.app/Mens/${id}`,payload)
     .then((res)=>{
         dispatch(EDIT_ADMIN_DATA_SUCESS_fn(res.data))
         dispatch(GET_ADMIN_DATA())
