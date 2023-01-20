@@ -5,7 +5,7 @@ import { SideBarItems } from "../../Utils/SiderLink";
 export const Sidebar = ({isopen,onClose, ...rest }) => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
-      <Flex  isopen={isopen} onClose={onClose}  mt={16}>
+      <Flex overflow={"auto"}  isopen={isopen} onClose={onClose}  mt={16}>
       <Box isopen={isopen} onClose={onClose} zIndex={[0,1002,1002]}
         transition="3s ease" bg={useColorModeValue('gray.200', 'gray.900')} borderRight="1px"
         borderRightColor={useColorModeValue('gray.600', 'red.700')} w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest}>
