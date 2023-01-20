@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Box, Flex, HStack, IconButton, useDisclosure, useColorModeValue, Image, useColorMode,InputGroup, Input, InputLeftElement,
+import React, { useEffect, useState } from 'react'
+import { Box, Flex, HStack, IconButton, useDisclosure, useColorModeValue, Image, InputGroup, Input, InputLeftElement,
  MenuList, MenuItem, MenuDivider, Avatar, MenuButton, Drawer, DrawerContent, Menu} from '@chakra-ui/react';
 import {  CloseIcon, HamburgerIcon, SearchIcon } from '@chakra-ui/icons';
 import {  useNavigate } from 'react-router-dom';
@@ -7,6 +7,8 @@ import Weblogo from "../.././Assets/nimbleCart_logo_rect.jpg"
 import { useCallback } from 'react';
 import { FiBell, FiChevronDown } from 'react-icons/fi';
 import { Sidebar } from './SideBar';
+import { useDispatch, useSelector } from 'react-redux';
+import { GET_ADMIN_DATA } from '../../redux/app/admin/action';
 
 
 
@@ -14,7 +16,13 @@ import { Sidebar } from './SideBar';
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [ SearchInputText,setSearchInputText]=useState("");
-
+  const PRODUCTS= useSelector((state)=> state.Adminreducer.adminSearchData)
+  const dispatch =useDispatch();
+  useEffect(()=>{
+    if(PRODUCTS.length>=0){
+        dispatch(GET_ADMIN_DATA())
+    }
+},[])
   const navigate = useNavigate()
   const handelQuery = (e) => {
     setSearchInputText(e.target.value)
