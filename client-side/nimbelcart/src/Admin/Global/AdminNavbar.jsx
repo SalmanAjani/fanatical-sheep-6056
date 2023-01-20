@@ -54,7 +54,7 @@ const Navbar = () => {
         zIndex={11000}
         position="fixed"
         p={0}
-        top={10}
+        top={0}
         left={0}
         w={"100%"}
         borderBottom={"1px solid red"}

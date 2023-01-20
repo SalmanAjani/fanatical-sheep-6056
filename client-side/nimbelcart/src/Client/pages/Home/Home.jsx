@@ -3,12 +3,12 @@ import React from "react";
 import GiftCards from "./giftcards";
 import data from "./hompagedb.json";
 import AccordionsHome from "./AccordionsHome";
-import { Accordion, Grid, Flex, Center, Box } from "@chakra-ui/react";
+import { Accordion, Grid, Flex, Center } from "@chakra-ui/react";
 import { IoBagCheckSharp, IoHeartOutline } from "react-icons/io5";
 import { RiShieldStarLine } from "react-icons/ri";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import CarouselHome from "./Carousel_home";
-import Footer from "../../Footer/Footer";
+
 
 const Home = () => {
   return (
@@ -84,7 +84,6 @@ const Home = () => {
           </Center>
         </Flex>
       </Grid>
-      <Footer />
     </div>
   );
 };

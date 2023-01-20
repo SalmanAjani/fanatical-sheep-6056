@@ -30,7 +30,7 @@ export const AllRoutes = () => {
   <ToastContainer position="top-center" theme="dark" />;
   return (
     <>
-      <Navbar />
+      
       <Routes>
         <Route
           path="/"
@@ -40,15 +40,15 @@ export const AllRoutes = () => {
             </>
           }
         ></Route>
-        <Route path="/products" element={<Products />}></Route>
-        <Route path="/ProductDetails" element={<ProductDetails />}></Route>
-        <Route path="/menproduct" element={<Products category="Mens" />} />
-        <Route path="/womenproduct" element={<Products category="Womens" />} />
-        <Route path="/kidproduct" element={<Products category="Kids" />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/order" element={<MyOrders />} />
+        <Route path="/products" element={<><Navbar/><Products /><Footer/></>}></Route>
+        <Route path="/ProductDetails" element={<><Navbar/><ProductDetails /><Footer/></>}></Route>
+        <Route path="/menproduct" element={<><Navbar/><Products category="Mens" /><Footer/></>} />
+        <Route path="/womenproduct" element={<><Navbar/><Products category="Womens" /><Footer/></>} />
+        <Route path="/kidproduct" element={<><Navbar/><Products category="Kids" /><Footer/></>} />
+        <Route path="/cart" element={<><Navbar/><Cart /><Footer/></>} />
+        <Route path="/signup" element={<><Navbar/><Signup /><Footer/></>} />
+        <Route path="/login" element={<><Navbar/><Footer/><Login /></>} />
+        <Route path="/order" element={<><Navbar/><Footer/><MyOrders /></>} />
         <Route path="/admin/dashboard" element={<AdminPage />} />
         <Route path="/admin/addproduct" element={<AdminAddProduct />} />
         <Route path="//admin/manageproducts" element={<ManageProduct />} />
