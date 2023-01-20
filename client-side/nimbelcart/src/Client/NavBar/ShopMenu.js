@@ -21,28 +21,36 @@ function ShopMenu() {
             p="0.4em 2rem"
             ml="1em"
             border="1px solid #d6d6d6"
-            w="fit-content"
             borderRadius={"2px"}
+            w={{ base: "fit-content" }}
           >
             <span>
               <RxHamburgerMenu color="tomato" />
             </span>
-            <Box fontWeight={"bold"}>Shop by Cateogry</Box>
+            <Box fontWeight={"bold"} fontSize={[8, 10, 13]}>
+              Shop by Cateogry
+            </Box>
           </Flex>
         </MenuButton>
-        <MenuList ml="60px" boxShadow =" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" p="20px" bg="white" zIndex={2}>
+        <MenuList
+          ml="2em"
+          boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+          p="20px"
+          bg="transparent"
+          backdropFilter={'blur(50px)'}
+          zIndex={10}
+        >
           <Grid gap="100px" templateColumns={"1fr 5fr"}>
             <Box borderRight={"1px solid #d6d6d6"} pr="100px">
-              <Text color="tomato">Gift Cards</Text>
+              <Text color="tomato">Apparels</Text>
             </Box>
-            <Flex  w="50vw" direction={'column'} align='start' gap="10px">
-              <Box >Fashion</Box>
-              <Box>Grocery & Home Decor</Box>
-              <Box>Jewelery</Box>
-              <Box>Furniture & Electronics</Box>
-              <Box>Entertainment</Box>
+            <Flex w="50vw" direction={"column"} align="start" gap="10px">
+              <Box>Fashion</Box>
+              <Box>Men's</Box>
+              <Box>Women's</Box>
+              <Box>Kids</Box>
               <Box>Beauty & Health</Box>
-              <Box>Travel & Holidays</Box>
+              <Box>Jewelry</Box>
             </Flex>
           </Grid>{" "}
         </MenuList>
