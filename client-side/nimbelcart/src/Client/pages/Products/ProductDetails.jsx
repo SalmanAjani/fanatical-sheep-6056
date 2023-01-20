@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import {
   Box,
@@ -28,7 +27,6 @@ import data from "../../../Assets/data/products.json";
 
 const ProductDetails = () => {
   let element = JSON.parse(localStorage.getItem("element"));
-  const navigate = useNavigate();
   const toast = useToast();
 
   useEffect(() => {
