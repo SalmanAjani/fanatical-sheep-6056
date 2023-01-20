@@ -1,4 +1,4 @@
 // URL FOR ADMIN PAGE------------------------------------------------------------->
-export const ADMIN_URL="https://odd-tan-lizard-kit.cyclic.app/"
+export const ADMIN_URL="https://nyresa-database.vercel.app/Mens"
 
 // =================================================================================

@@ -1,44 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Button, Flex } from "@chakra-ui/react";
 
- const itemsPerPage = 5;
- 
- const  Pagination = ({ data }) => {
-   const [currentPage, setCurrentPage] = useState(1);
-   const [totalPages, setTotalPages] = useState(0);
- 
-    const handlePagination=(data, itemsPerPage)=> {
-     setTotalPages(Math.ceil(data.length / itemsPerPage));
-   }
- 
-   useEffect(() => {
-     handlePagination(data, itemsPerPage);
-   }, [data, itemsPerPage]);
- 
-   const startIndex = (currentPage - 1) * itemsPerPage;
-   const endIndex = startIndex + itemsPerPage;
-   const currentData = data.slice(startIndex, endIndex);
- 
-   return (
-     <div>
-       <div>
-         {currentData.map(item => (
-           <div key={item.id}>
-             {item.name}
-           </div>
-         ))}
-       </div>
-       <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
-       <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
-       <div>
-         {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNumber => (
-           <button key={pageNumber} onClick={() => setCurrentPage(pageNumber)}>
-             {pageNumber}
-           </button>
-         ))}
-       </div>
-     </div>
-   );
- };
- 
+export const Pagination = ({
+  totalProducts,
+  productsPerPage,
+  currentPage,
+  handlePageChange,
+}) => {
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
- 
+  return (
+    <Flex justifyContent="center">
+      {currentPage > 1 && (
+        <Button
+          variant="outline"
+          colorScheme="red"
+          onClick={() => handlePageChange("prev")}
+          mr={2}
+        >
+          Previous
+        </Button>
+      )}
+      {pageNumbers.map((number) => (
+        
+        <Button
+          variant="outline"
+          colorScheme={currentPage === number ? "green" : "blue"}
+          onClick={() => handlePageChange(number)}
+          mr={2}
+          key={number}
+          disabled={currentPage === number}
+        >
+          {number}
+        </Button>
+      ))}
+      {currentPage < pageNumbers.length && (
+        <Button
+          variant="outline"
+          colorScheme="red"
+          onClick={() => handlePageChange("next")}
+        >
+          Next
+        </Button>
+      )}
+    </Flex>
+  );
+};

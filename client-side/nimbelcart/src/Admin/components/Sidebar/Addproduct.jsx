@@ -1,27 +1,29 @@
 import React,{  useState }  from 'react'
-import {Flex,Box,FormControl,FormLabel,Input,Stack,Button, Heading,  useColorModeValue, Container, Hide, Center,} from '@chakra-ui/react';
+import {Flex,Box,FormControl,FormLabel,Input,Stack,Button, Heading,  useColorModeValue, Container, Center,useToast} from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { AiFillFileAdd } from 'react-icons/ai';
 import { ADD_ADMIN_DATA } from '../../../redux/app/admin/action';
 
-import { toast } from 'react-toastify';
 
 export const Addproduct =()=> {
-  const {useruid} =[]
+  const toast = useToast();
 const [form, setForm]= useState({
-  image: "",
-  des:"",
-  price: "",
-  user_id: useruid,
+  title: "",
+  images: "",
+  discounted_price: null,
+  quantity: null,
+  userid:null
+  // JSON.parse(localStorage.getItem("user"))._id || 0
+     
 })
 const dispatch = useDispatch();
 const formclear =()=>{
   setForm({
     ...form,
-    name: "",
-    image: "",
-    desc:"",
-    price: null,
+    title: "",
+    images: "",
+    discounted_price: null,
+    quantity: null,
   })
 }
 
@@ -41,14 +43,19 @@ console.log(form)
     })
     setForm({
       ...form,
-    name: "",
-    image: "",
-    desc:"",
-    newPrice: null,
-    oldPrice:null,
+      title: "",
+      images: "",
+      discounted_price: null,
+      quantity: null,
 
     })
-    toast.success("Product Added Sucessfully")
+    toast({
+      position: "top-right",
+      title: "Product added Sucessfully.",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
   }
 
 
@@ -85,7 +92,7 @@ console.log(form)
               <Input type="Text" onChange={OnChangeValue} name="image"  />
             </FormControl>
             <FormControl id="Description" isRequired>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel>Discounted Price</FormLabel>
                   <Input type="text" onChange={OnChangeValue}  name="desc"/>
                 </FormControl>
               <FormControl id="Quqantity" isRequired>
@@ -95,13 +102,7 @@ console.log(form)
             <FormControl id="price" isRequired>
               <FormLabel>Price (₹)</FormLabel>
               <Input type="number" maxLength={"2"} onChange={OnChangeValue}  name="price"/>
-            </FormControl> 
-            <Hide>
-            <FormControl >
-              
-              <Input type="text" onChange={OnChangeValue} value={useruid}  name="user_id"/>
             </FormControl>  
-            </Hide> 
             <Stack pt={5} justify={["space-evenly","flex-end"]} spacing={6} direction={['row', 'row']}>
           <Box><Button
             bg={'red.400'}
