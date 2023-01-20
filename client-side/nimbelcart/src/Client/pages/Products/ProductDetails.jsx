@@ -39,7 +39,9 @@ const ProductDetails = () => {
       images: data.images[0],
       discounted_price: data.discounted_price,
       quantity: data.quantity,
+      userid:JSON.parse(localStorage.getItem("user"))._id
     };
+    console.log(dataObj,"cartdd")
     toast({
       position: "top-right",
       title: "Product added to cart.",
