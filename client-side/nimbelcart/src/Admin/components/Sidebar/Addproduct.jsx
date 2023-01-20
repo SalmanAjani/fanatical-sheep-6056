@@ -1,9 +1,10 @@
 import React,{  useState }  from 'react'
-import {Flex,Box,FormControl,FormLabel,Input,Stack,Button, Heading, Text, useColorModeValue, Container, Hide, Center, Textarea,} from '@chakra-ui/react';
+import {Flex,Box,FormControl,FormLabel,Input,Stack,Button, Heading,  useColorModeValue, Container, Hide, Center,} from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { AiFillFileAdd } from 'react-icons/ai';
+import { ADD_ADMIN_DATA } from '../../../redux/app/admin/action';
 
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export const Addproduct =()=> {
   const {useruid} =[]
@@ -36,20 +37,18 @@ setForm({
 const OnsubmitPress =(e)=>{
   e.preventDefault();
 console.log(form)
-    // dispatch(ADD_DATA_COMPANY_COURSE({...form})).then((r)=>{
-    // })
-  //   dispatch(ADD_DATA_STUDENT_COURSE({...form})).then((r)=>{
-  //   })
-  //   setForm({
-  //     ...form,
-  //   name: "",
-  //   image: "",
-  //   desc:"",
-  //   newPrice: null,
-  //   oldPrice:null,
+    dispatch( ADD_ADMIN_DATA({...form})).then((r)=>{
+    })
+    setForm({
+      ...form,
+    name: "",
+    image: "",
+    desc:"",
+    newPrice: null,
+    oldPrice:null,
 
-  //   })
-  //   toast.success("Item add in Course page from Admin page")
+    })
+    toast.success("Product Added Sucessfully")
   }
 
 

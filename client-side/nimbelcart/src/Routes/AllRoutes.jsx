@@ -11,7 +11,6 @@ import MyOrders from "../Client/pages/Home/MyOrders";
 // Routes for addmin---------------------------------------------------------------->
 import AdminPage from "../Admin/Pages/AdminPage";
 import AdminAddProduct from "../Admin/Pages/AdminAddProduct";
-import { Editproduct } from "../Admin/components/Sidebar/Editproduct";
 import FAQPage from "../Admin/Pages/FAQPage";
 import BarChartPage from "../Admin/Pages/BarChartPage";
 import { LineChartPage } from "../Admin/Pages/LineChartPage";
@@ -21,12 +20,12 @@ import { CalenderPage } from "../Admin/Pages/CalenderPage";
 import SupportPage from "../Admin/Pages/SupportPage";
 import { Tutorialpage } from "../Admin/Pages/Tutorialpage";
 import { ManageProduct } from "../Admin/Pages/ManageProduct";
-
-
-
+import UpdatePage from "../Admin/Pages/UpdatePage";
+import { ToastContainer } from 'react-toastify'
 // ===================================================================================
 
 export const AllRoutes = () => {
+  <ToastContainer position="top-center" theme="dark" />
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
@@ -51,7 +50,8 @@ export const AllRoutes = () => {
       <Route path="/admin/support" element={<SupportPage/>}/>
       <Route path="/admin/frequentlyaskedquestions" element={<FAQPage/>}/>
       <Route path="/admin/tutorial" element={<Tutorialpage/>}/>
-      <Route path="/:displayid/:id/:title/edit" element={<Editproduct/>} />
+      <Route path="/:id/:title/edit" element={<UpdatePage/>} />
+     
     </Routes>
   );
 };
