@@ -1,6 +1,6 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Box, Button, CloseButton, Divider, Flex,  useColorMode, useColorModeValue ,Icon, Text} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Box, Button, CloseButton, Divider, Flex,  useColorMode, useColorModeValue ,Icon, Text, VStack} from "@chakra-ui/react";
+import { Link, NavLink } from "react-router-dom";
 import { SideBarItems } from "../../Utils/SiderLink";
 export const Sidebar = ({isopen,onClose, ...rest }) => {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -15,10 +15,13 @@ export const Sidebar = ({isopen,onClose, ...rest }) => {
         </Flex>
         <Divider bg={useColorModeValue('black', 'white')}  orientation='horizontal' mt={"-1.5px"} mb={2}/>
         {SideBarItems.map((link) => (
-          <NavItem key={link.name}  icon={link.icon} >
-            {link.name}
-            
-          </NavItem>
+          <VStack key={link.name} align={"flex-start"} pl={7} py={1}>
+          <NavLink style={({ isActive }) =>isActive ? { color: 'white',background: '#28c58f', borderRadius:"7px"}: { color: 'white', background: 'transparent',borderRadius:"7px" }
+  } key={link.name} to={link.to}>
+          <Button w={200}  justifyContent="flex-start" _hover={{bg:"tomato",color:"white"}} 
+          _focus={{bg:"tomato",color:"white"}} variant={"ghost"} leftIcon={<link.icon/>} >{link.name}</Button>
+          </NavLink>
+          </VStack>
         ))}
         <Flex pt={2} align={"center"} justify={"center"}>
          <Button onClick={toggleColorMode}>

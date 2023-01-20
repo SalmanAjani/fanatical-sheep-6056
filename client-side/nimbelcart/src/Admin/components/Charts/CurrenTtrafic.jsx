@@ -1,3 +1,4 @@
+import { Box, Divider, Text, VStack } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { Chart } from "react-google-charts";
 
@@ -14,7 +15,7 @@ const Get_CX = () => {
 
 export const options = {
     colors: ["green", "blue"],
-    backgroundColor: '#1a202c',
+    backgroundColor: 'transparent',
     pointSize: 10,
     animation: {
       duration: 1000,
@@ -51,12 +52,16 @@ export const  CurrenTtrafic=()=> {
     });
   
     return (
+      <Box>
       <Chart
         chartType="ScatterChart"
-        width="80%"
+        width="100%"
         height="400px"
         data={chartData}
         options={options}
       />
+          <VStack align={"center"} justify={"center"} ><Divider backgroundColor={"red"} w={"70%"}/></VStack>
+    <Text  align={"center"} p={2}  >Curent Trafic Watching Your Product</Text>
+      </Box>
     );
   }
