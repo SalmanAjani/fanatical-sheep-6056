@@ -13,7 +13,13 @@ import {
 import {faQData} from "../../../Utils/faq.questions"
 import {  ChatIcon } from '@chakra-ui/icons'
 import { HiPhoneMissedCall } from "react-icons/hi";
+import { useNavigate } from 'react-router-dom';
+
+
 const Faq = () => {
+  const navigate =useNavigate();
+const handelRedirect=()=>{
+  navigate("/admin/support")}
   return (
     <Box py={[3,20]} px={[2,5]} >
       <Text as="header"  color={"red.400"} fontSize={["2xl",'4xl']} textAlign={"center"} >Frequently Asked Questions?</Text>
@@ -37,10 +43,10 @@ const Faq = () => {
 </Accordion>
 <Text  fontSize={["xs",'md']} p={5} textAlign={"center"} pb={5} color={"yellow.300"} >Still have a Doubt? </Text>
 <Stack align={"center"} justify={"center"} direction='row' spacing={4}>
-  <Button leftIcon={<ChatIcon />} colorScheme='teal' variant='solid'>
+  <Button onClick={handelRedirect} leftIcon={<ChatIcon />} colorScheme='teal' variant='solid'>
     Chat With us
   </Button>
-  <Button rightIcon={<HiPhoneMissedCall />} colorScheme='teal' variant='solid'>
+  <Button onClick={()=>handelRedirect()} rightIcon={<HiPhoneMissedCall />} colorScheme='teal' variant='solid'>
     Call us
   </Button>
 </Stack>

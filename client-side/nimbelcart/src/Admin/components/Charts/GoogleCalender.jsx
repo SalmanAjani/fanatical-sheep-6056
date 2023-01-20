@@ -1,3 +1,4 @@
+import { Box, Divider, Text, VStack } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { Chart } from "react-google-charts";
 
@@ -45,16 +46,21 @@ export const GoogleCalender = () => {
     });
 
     setData(formattedData);
-    setOptions({ title: "Red Sox Attendance" });
+    setOptions({ title: "Day Sales Report" });
   }, []);
 
   return (
+    <Box>
     <Chart
       chartType="Calendar"
-      width="100%"
+      width="90%"
       height="400px"
       data={data}
       options={options}
     />
+   
+    </Box>
+
+    
   );
 };

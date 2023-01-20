@@ -1,3 +1,4 @@
+import { Box, Divider, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { Chart } from "react-google-charts";
 
@@ -17,7 +18,7 @@ export const options = {
   hAxis: { title: "Year" },
   seriesType: "bars",
   series: { 5: { type: "line" } },
-  backgroundColor: '#a0aec0',
+  backgroundColor: 'transparent',
 };
 
 export const ComboChart=()=> {
@@ -49,6 +50,7 @@ const data2 = [
   ];
 
   return (
+    <Box>
     <Chart
       chartType="ComboChart"
       width="100%"
@@ -56,5 +58,9 @@ const data2 = [
       data={data2}
       options={options}
     />
+
+    <VStack pt={5} align={"center"} justify={"center"} ><Divider backgroundColor={"red"} w={"70%"}/></VStack>
+    <Text  align={"center"} p={2}  >Annual Report</Text>
+      </Box>
   );
 }
