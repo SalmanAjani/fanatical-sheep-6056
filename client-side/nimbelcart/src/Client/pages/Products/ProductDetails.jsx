@@ -35,7 +35,13 @@ const ProductDetails = () => {
     element = JSON.parse(localStorage.getItem("element")) || {};
   }, [element]);
 
-  const handleAdd = (el) => {
+  const handleAdd = (data) => {
+    let dataObj = {
+      title: data.title,
+      images: data.images[0],
+      discounted_price: data.discounted_price,
+      quantity: data.quantity,
+    };
     toast({
       position: "top-right",
       title: "Product added to cart.",
@@ -43,16 +49,15 @@ const ProductDetails = () => {
       duration: 9000,
       isClosable: true,
     });
-    fetch("https://nyresa-database.vercel.app/productlist", {
+    fetch("https://odd-tan-lizard-kit.cyclic.app/cart", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-Type": "application/json",
       },
-      body: JSON.stringify(el),
+      body: JSON.stringify(dataObj),
     })
-      .then((res) => {
-        res.json();
-      })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
 
