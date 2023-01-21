@@ -11,17 +11,14 @@ import { getData } from "../../../redux/bag/actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { loading, error, items: item } = useSelector((store) => store.carts);
+  const { loading, error, items } = useSelector((store) => store.carts);
   // const items = JSON.parse(localStorage.getItem("cart-item")) || [];
   // items.push(
 
   // );
 
-  const [items, setCartdata] = useState(item);
-
   let user = JSON.parse(localStorage.getItem("user"));
   console.log({ userid: user._id }, "user");
-  console.log(items);
 
   React.useEffect(() => {
     dispatch(getData());
