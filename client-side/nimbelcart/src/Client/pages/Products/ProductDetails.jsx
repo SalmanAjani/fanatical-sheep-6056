@@ -32,16 +32,17 @@ const ProductDetails = () => {
   useEffect(() => {
     element = JSON.parse(localStorage.getItem("element")) || {};
   }, [element]);
-
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
   const handleAdd = (data) => {
     let dataObj = {
       title: data.title,
       images: data.images[0],
       discounted_price: data.discounted_price,
       quantity: data.quantity,
-      userid:JSON.parse(localStorage.getItem("user"))._id
+      userid: user._id,
     };
-    console.log(dataObj,"cartdd")
+    console.log(dataObj, "cartdd");
     toast({
       position: "top-right",
       title: "Product added to cart.",

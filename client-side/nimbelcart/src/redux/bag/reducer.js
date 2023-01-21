@@ -4,23 +4,21 @@ import {
   GET_DATA_SUCCESSFULLY,
   ADD_ITEM,
   UPDATE_QUANTITY,
-  REMOVE_ITEM
+  REMOVE_ITEM,
 } from "./actionTypes";
 
 const initialState = {
-  items:[],
+  items: [],
   loading: false,
-  error: false
+  error: false,
 };
-let arr=[]
+let arr = [];
 export const cartReducer = (state = initialState, action) => {
- 
-  
   switch (action.type) {
     case LOADING_STATE: {
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     }
 
@@ -28,41 +26,42 @@ export const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: true
+        error: true,
       };
     }
 
     case GET_DATA_SUCCESSFULLY: {
       return {
-        error:false,
-        items:action.payload,
-        loading: false
+        error: false,
+        items: action.payload,
+        loading: false,
       };
     }
     case ADD_ITEM: {
-      arr.push(action.payload)
+      arr.push(action.payload);
       return {
         ...state,
-        loading: false
+        loading: false,
       };
     }
-case UPDATE_QUANTITY:{
-  let x=state.items.map((el)=>el._id===action.payload._id?el.quantity=action.payload.quantity:el)
-  console.log(x,"update")
-  return {
-    ...state ,
-    items:x
-    
-  }
-}
-case REMOVE_ITEM:{
-  let x=state.items.filter((el)=>el._id!==action.payload.id)
-  return {
-    ...state ,
-    items:x
-    
-  }
-}
+    case UPDATE_QUANTITY: {
+      let x = state.items.map((el) =>
+        el._id === action.payload._id
+          ? (el.quantity = action.payload.quantity)
+          : el
+      );
+      console.log(x, "update");
+      return {
+        ...state,
+        items: x,
+      };
+    }
+    case REMOVE_ITEM: {
+      return {
+        ...state,
+        items: state.items.filter((cart) => cart._id !== action.payload.id),
+      };
+    }
     default: {
       return state;
     }

@@ -18,8 +18,9 @@ import {
 import logo from "../../Assets/nimbleCart_logo_rect.jpg";
 import ShopMenu from "./ShopMenu";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 function Navbar() {
+  const { items } = useSelector((store) => store.carts);
   return (
     <Box position="sticky" top="0" bg="#fff">
       {/* ?logo */}
@@ -89,7 +90,9 @@ function Navbar() {
             <BsHandbag color="tomato" h={[100, 200, 300]} />
             <Box mt="3px" fontSize={[10, 14]}>
               {" "}
-              <Link to="/cart">No Items in the bag</Link>
+              <Link to="/cart">
+                {items.length > 0 ? items.length : "No Items in the bag"}
+              </Link>
             </Box>
           </Flex>
 

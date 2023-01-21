@@ -9,14 +9,12 @@ import {
 
 export const getData = () => async (dispatch) => {
   let x = JSON.parse(localStorage.getItem("user"));
-  let data = await axios.get(`https://odd-tan-lizard-kit.cyclic.app/cart`, {
-    userid: x._id,
-  });
+  let userid = x._id;
+  let data = await axios.get(
+    `https://odd-tan-lizard-kit.cyclic.app/cart/${userid}`
+  );
 
-  console.log(data);
-
-  // console.log(data);
-  // dispatch({ type: GET_DATA_SUCCESSFULLY, payload: data });
+  dispatch({ type: GET_DATA_SUCCESSFULLY, payload: data.data });
 };
 
 export const updated =
@@ -31,26 +29,23 @@ export const updated =
         // "authorization":JSON.getItem("token")
       },
     })
-      .then((res) => res.json)
+      .then((res) => res.json())
       .then((res) => ((dat = res[0]), console.log(res)))
       .catch((err) => console.log(err));
     // getData()
     dispatch({ type: UPDATE_QUANTITY, payload: dat });
   };
+
 export const removed = (id) => (dispatch) => {
-  let dat = {};
   fetch(`https://odd-tan-lizard-kit.cyclic.app/cart`, {
     method: "DELETE",
     body: JSON.stringify({ id }),
-
     headers: {
       "Content-Type": "application/json",
-      // "authorization":JSON.getItem("token")
     },
   })
-    .then((res) => res.json)
-    .then((res) => ((dat = res), console.log(res)))
+    .then((res) => res.json())
+    .then((res) => console.log("res", res))
     .catch((err) => console.log(err));
   dispatch({ type: REMOVE_ITEM, payload: id });
-  // getData()
 };
