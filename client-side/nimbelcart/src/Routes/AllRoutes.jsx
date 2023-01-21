@@ -24,6 +24,8 @@ import UpdatePage from "../Admin/Pages/UpdatePage";
 import { ToastContainer } from "react-toastify";
 import Navbar from "../Client/NavBar/NavBar";
 import Footer from "../Client/Footer/Footer";
+import { ProductPreviewPage } from "../Admin/Pages/ProductPreviewPage";
+
 // ===================================================================================
 
 export const AllRoutes = () => {
@@ -62,6 +64,7 @@ export const AllRoutes = () => {
         <Route path="/admin/frequentlyaskedquestions" element={<FAQPage />} />
         <Route path="/admin/tutorial" element={<Tutorialpage />} />
         <Route path="/:id/:title/edit" element={<UpdatePage />} />
+        <Route path="/:id/:title/displayproduct" element={<ProductPreviewPage/> } />
       </Routes>
     </>
   );

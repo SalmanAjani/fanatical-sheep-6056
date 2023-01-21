@@ -20,7 +20,7 @@ import {
   Menu,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Weblogo from "../.././Assets/nimbleCart_logo_rect.jpg";
 import { useCallback } from "react";
 import { FiBell, FiChevronDown } from "react-icons/fi";
@@ -67,7 +67,9 @@ const Navbar = () => {
           <HStack>
             {/* <IconButton size={'md'}  icon={isOpen ? "" : <HamburgerIcon />} */}
             {isOpen ? (
+              <NavLink to={"/"}>
               <Image borderRadius={5} w={55} src={Weblogo} alt="Nimble Cart" />
+              </NavLink>
             ) : (
               <IconButton
                 size={"md"}
@@ -79,13 +81,15 @@ const Navbar = () => {
             )}
 
             {/* // aria-label={'Open Menu'} display={{ md: 'none' }}onClick={isOpen ? onClose : onOpen}/> */}
+            <NavLink to={"/"}>
             <Image
               display={{ base: "none", md: "block" }}
-              ml={[1330, 0, 1110]}
-              w={50}
+             borderRadius={5}
+              w={100}
               src={Weblogo}
               alt="Nimble Cart"
             />
+            </NavLink>
           </HStack>
           <HStack>
             <HStack spacing={{ base: "0", md: "6" }}>
