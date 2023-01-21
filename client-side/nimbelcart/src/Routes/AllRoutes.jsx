@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../Client/pages/Home/Home";
 import Products from "../Client/pages/Products/Products";
 import ProductDetails from "../Client/pages/Products/ProductDetails";
@@ -25,14 +25,17 @@ import { ToastContainer } from "react-toastify";
 import Navbar from "../Client/NavBar/NavBar";
 import Footer from "../Client/Footer/Footer";
 import { ProductPreviewPage } from "../Admin/Pages/ProductPreviewPage";
+import { useSelector } from "react-redux";
 
 // ===================================================================================
 
 export const AllRoutes = () => {
   <ToastContainer position="top-center" theme="dark" />;
+  const {
+    data: { isAuthenticated },
+  } = useSelector((state) => state.auth);
   return (
     <>
-      
       <Routes>
         <Route
           path="/"
@@ -42,15 +45,115 @@ export const AllRoutes = () => {
             </>
           }
         ></Route>
-        <Route path="/products" element={<><Navbar/><Products /><Footer/></>}></Route>
-        <Route path="/ProductDetails" element={<><Navbar/><ProductDetails /><Footer/></>}></Route>
-        <Route path="/menproduct" element={<><Navbar/><Products category="Mens" /><Footer/></>} />
-        <Route path="/womenproduct" element={<><Navbar/><Products category="Womens" /><Footer/></>} />
-        <Route path="/kidproduct" element={<><Navbar/><Products category="Kids" /><Footer/></>} />
-        <Route path="/cart" element={<><Navbar/><Cart /><Footer/></>} />
-        <Route path="/signup" element={<><Navbar/><Signup /><Footer/></>} />
-        <Route path="/login" element={<><Navbar/><Footer/><Login /></>} />
-        <Route path="/order" element={<><Navbar/><Footer/><MyOrders /></>} />
+        <Route
+          path="/products"
+          element={
+            <>
+              <Navbar />
+              <Products />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/ProductDetails"
+          element={
+            <>
+              <Navbar />
+              <ProductDetails />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/menproduct"
+          element={
+            <>
+              <Navbar />
+              <Products category="Mens" />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/womenproduct"
+          element={
+            <>
+              <Navbar />
+              <Products category="Womens" />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/kidproduct"
+          element={
+            <>
+              <Navbar />
+              <Products category="Kids" />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            !isAuthenticated ? (
+              <Navigate to="/" />
+            ) : (
+              <>
+                <Navbar />
+                <Cart />
+                <Footer />
+              </>
+            )
+          }
+        />
+
+        <Route
+          path="/signup"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/" />
+            ) : (
+              <>
+                <Navbar />
+                <Signup />
+                <Footer />
+              </>
+            )
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/" />
+            ) : (
+              <>
+                <Navbar />
+                <Login />
+                <Footer />
+              </>
+            )
+          }
+        />
+
+        <Route
+          path="/order"
+          element={
+            !isAuthenticated ? (
+              <Navigate to="/" />
+            ) : (
+              <>
+                <Navbar />
+                <MyOrders />
+                <Footer />
+              </>
+            )
+          }
+        />
+
         <Route path="/admin/dashboard" element={<AdminPage />} />
         <Route path="/admin/addproduct" element={<AdminAddProduct />} />
         <Route path="//admin/manageproducts" element={<ManageProduct />} />
@@ -64,7 +167,10 @@ export const AllRoutes = () => {
         <Route path="/admin/frequentlyaskedquestions" element={<FAQPage />} />
         <Route path="/admin/tutorial" element={<Tutorialpage />} />
         <Route path="/:id/:title/edit" element={<UpdatePage />} />
-        <Route path="/:id/:title/displayproduct" element={<ProductPreviewPage/> } />
+        <Route
+          path="/:id/:title/displayproduct"
+          element={<ProductPreviewPage />}
+        />
       </Routes>
     </>
   );

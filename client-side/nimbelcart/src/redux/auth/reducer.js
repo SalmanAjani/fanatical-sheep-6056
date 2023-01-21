@@ -33,7 +33,12 @@ export function authReducer(state = initialState, { type, payload }) {
         ...state,
         userLogin: { loading: false, error: true, message: "Error" },
       };
-
+    case "AUTH_LOGIN_RESET":
+      return {
+        ...state,
+        userLogin: { message: "" },
+        userRegister: { message: "" },
+      };
     case types.AUTH_LOGOUT:
       localStorage.removeItem("token");
       return {
@@ -44,7 +49,6 @@ export function authReducer(state = initialState, { type, payload }) {
           user: null,
         },
       };
-
     case types.REGISTER_USER_REQUEST:
       return {
         ...state,

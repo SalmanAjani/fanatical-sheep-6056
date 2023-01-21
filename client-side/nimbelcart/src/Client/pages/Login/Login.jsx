@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginIng from "./login.jpg";
 import { authLogin } from "../../../redux/auth/action";
-import { useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useToast } from "@chakra-ui/react";
+import { getData } from "../../../redux/bag/actions";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -15,16 +16,79 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const dispatch = useDispatch();
+
+  const toast = useToast();
+  const authState = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (authState.userLogin.message === "User does not exist") {
+      toast({
+        title: "User does not exist",
+        status: "info",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      dispatch({ type: "AUTH_LOGIN_RESET" });
+    }
+    if (authState.userLogin.message === "Password is incorrect") {
+      toast({
+        title: "Password is incorrect",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      dispatch({ type: "AUTH_LOGIN_RESET" });
+    }
+    if (authState.userLogin.message === "Something went wrong") {
+      toast({
+        title: "Something went wrong",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      dispatch({ type: "AUTH_LOGIN_RESET" });
+    }
+    if (authState.userLogin.message === "Login successful") {
+      toast({
+        title: "Login successful",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      dispatch({ type: "AUTH_LOGIN_RESET" });
+      dispatch(getData());
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
+  }, [dispatch, navigate, authState, toast]);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (formData.email.trim() !== "" && formData.password.trim() !== "") {
       if (formData.password.trim().length < 4) {
-        alert("Password must be at least of 4 characters");
+        toast({
+          title: "Password must be at least of 4 characters",
+          status: "info",
+          duration: 3000,
+          isClosable: true,
+          position: "top",
+        });
       } else {
         dispatch(authLogin(formData));
       }
     } else {
-      alert("Please enter all required fields");
+      toast({
+        title: "Please enter all required fields",
+        status: "info",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
     }
   };
   return (

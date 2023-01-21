@@ -18,9 +18,16 @@ import {
 import logo from "../../Assets/nimbleCart_logo_rect.jpg";
 import ShopMenu from "./ShopMenu";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { authLogout } from "../../redux/auth/action";
 function Navbar() {
   const { items } = useSelector((store) => store.carts);
+  const dispatch = useDispatch();
+  const {
+    data: { isAuthenticated },
+  } = useSelector((state) => state.auth);
+  const { data } = useSelector((state) => state.auth);
+  // console.log(data.user.role);
   return (
     <Box position="sticky" top="0" bg="#fff">
       {/* ?logo */}
@@ -72,13 +79,14 @@ function Navbar() {
           ml="1em"
           display={{ base: "none", sm: "flex" }}
         >
-          <Flex align={"center"} alignItems="center" gap="5px">
-            <RiAdminFill color="tomato" />
-            <Box mt="3px" fontSize={[10, 14]}>
-              <Link to="/admin/dashboard">Admin</Link>
-            </Box>
-          </Flex>
-
+          {data?.user?.role === "admin" ? (
+            <Flex align={"center"} alignItems="center" gap="5px">
+              <RiAdminFill color="tomato" />
+              <Box mt="3px" fontSize={[10, 14]}>
+                <Link to="/admin/dashboard">Admin</Link>
+              </Box>
+            </Flex>
+          ) : ""}
           <Flex align={"center"} alignItems="center" gap="5px">
             <BsFileText color="tomato" h={[100, 200, 300]} />
             <Box mt="3px" fontSize={[10, 14]}>
@@ -89,19 +97,27 @@ function Navbar() {
           <Flex align={"center"} alignItems="center" gap="5px">
             <BsHandbag color="tomato" h={[100, 200, 300]} />
             <Box mt="3px" fontSize={[10, 14]}>
-              {" "}
               <Link to="/cart">
                 {items.length > 0 ? items.length : "No Items in the bag"}
               </Link>
             </Box>
           </Flex>
 
-          <Flex align={"center"} alignItems="center" gap="5px">
-            <BsFillEmojiSunglassesFill color="tomato" h={[100, 200, 300]} />
-            <Box mt="3px" fontSize={[10, 14]}>
-              <Link to="/signup">Sign up</Link>
-            </Box>
-          </Flex>
+          {!isAuthenticated ? (
+            <Flex align={"center"} alignItems="center" gap="5px">
+              <BsFillEmojiSunglassesFill color="tomato" h={[100, 200, 300]} />
+              <Box mt="3px" fontSize={[10, 14]}>
+                <Link to="/signup">Sign up</Link>
+              </Box>
+            </Flex>
+          ) : (
+            <Flex align={"center"} alignItems="center" gap="5px">
+              <BsFillEmojiSunglassesFill color="tomato" h={[100, 200, 300]} />
+              <Box mt="3px" fontSize={[10, 14]}>
+                <p onClick={() => dispatch(authLogout())}>Logout</p>
+              </Box>
+            </Flex>
+          )}
         </Flex>
       </Flex>
     </Box>
