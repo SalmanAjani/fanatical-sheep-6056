@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate  } from 'react-router-dom';
 import { DELETE_ADMIN_DATA, GET_ADMIN_DATA } from '../../../redux/app/admin/action';
 import { Pagination } from "../Pagination"
-
+import { VscPreview } from "react-icons/vsc";
 const ManageProducts = () => {
   const toast= useToast();
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +23,9 @@ const ManageProducts = () => {
   const handleEdit =(id,title)=>{
      navigate(`/${id}/${title}/edit`)
   }
-
+  const handleProductPreView =(id,title)=>{
+    navigate(`/${id}/${title}/displayproduct`)
+ }
   useEffect(() => {
     if(PRODUCTS.length >= 0) {
         dispatch(GET_ADMIN_DATA())
@@ -70,6 +72,8 @@ const ManageProducts = () => {
                 <Divider visibility={["collapse","visible"]} orientation='vertical' bg={"red"} h={"65px"}/>
                 <Th>
               <Flex align={"center"} justify={"center"} gap={2}>
+              <Button visibility={["collapse","visible"]}  variant='outline' colorScheme='green' 
+                 onClick={()=>handleProductPreView(item.id,item.title) } ><VscPreview/></Button>
                 <Button visibility={["collapse","visible"]}  variant='outline' colorScheme='yellow'><FcAdvertising/></Button>
                 <Button visibility={["collapse","visible"]}  variant='outline' colorScheme='green' 
                  onClick={()=>handleEdit(item.id,item.title) } ><FiEdit/></Button>

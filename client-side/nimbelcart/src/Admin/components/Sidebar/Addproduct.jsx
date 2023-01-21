@@ -9,6 +9,7 @@ export const Addproduct =()=> {
   const toast = useToast();
 const [form, setForm]= useState({
   title: "",
+  subtitle: "",
   images: "",
   discounted_price: null,
   quantity: null,
@@ -21,6 +22,7 @@ const formclear =()=>{
   setForm({
     ...form,
     title: "",
+    subtitle: "",
     images: "",
     discounted_price: null,
     quantity: null,
@@ -44,6 +46,7 @@ console.log(form)
     setForm({
       ...form,
       title: "",
+      subtitle: "",
       images: "",
       discounted_price: null,
       quantity: null,
@@ -84,16 +87,20 @@ console.log(form)
           <Stack spacing={[2,8,8]}>
           <form>
             <FormControl id="Title" isRequired>
-                  <FormLabel>Title</FormLabel>
-                  <Input type="text"onChange={OnChangeValue}   name="name" />
+                  <FormLabel>Brand</FormLabel>
+                  <Input type="text"onChange={OnChangeValue}   name="title" />
+                </FormControl>
+                <FormControl id="Title" isRequired>
+                  <FormLabel>Name</FormLabel>
+                  <Input type="text"onChange={OnChangeValue}   name="subtitle" />
                 </FormControl>
             <FormControl id="Image" isRequired>
               <FormLabel>Image Url</FormLabel>
-              <Input type="Text" onChange={OnChangeValue} name="image"  />
+              <Input type="Text" onChange={OnChangeValue} name="images"  />
             </FormControl>
             <FormControl id="Description" isRequired>
                   <FormLabel>Discounted Price</FormLabel>
-                  <Input type="text" onChange={OnChangeValue}  name="desc"/>
+                  <Input type="text" onChange={OnChangeValue}  name="discounted_price"/>
                 </FormControl>
               <FormControl id="Quqantity" isRequired>
               <FormLabel>Quantity(unit)</FormLabel>

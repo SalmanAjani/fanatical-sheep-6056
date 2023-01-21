@@ -40,7 +40,7 @@ export const SearchBar = ({query}) => {
     {suggestion.length>0 &&(
     <Box bg={"black"} zIndex={25} position={"absolute"} overflow={"auto"} border={"3px solid #1a202c"} w={450} h={423}>
     {suggestion.map((item,i)=>
-       <Link key={item.id} to={`/${item.id}/${item.title}/edit`}> 
+       <Link key={item.id} to={`/${item.id}/${item.title}/displayproduct`}> 
             <HStack  lineHeight={"25px"} mt={"3px"} bg={"#171923"} h={"80px"} 
                     _hover={{ bg: "tomato", color: " white" }}>
                       <Flex flex={3}><Image ml={"6px"}  borderLeftRadius={"5px"} src={item.images[0]} w={"142px"} h={"74px"}  /></Flex>
