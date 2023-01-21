@@ -1,3 +1,5 @@
+import React from "react";
+import axios from "axios";
 import {
   GET_DATA_SUCCESSFULLY,
   ADD_ITEM,
@@ -6,9 +8,15 @@ import {
 } from "./actionTypes";
 
 export const getData = () => async (dispatch) => {
-  let res = await fetch(`https://odd-tan-lizard-kit.cyclic.app/cart`);
-  let data = await res.json();
-  dispatch({ type: GET_DATA_SUCCESSFULLY, payload: data });
+  let x = JSON.parse(localStorage.getItem("user"));
+  let data = await axios.get(`https://odd-tan-lizard-kit.cyclic.app/cart`, {
+    userid: x._id,
+  });
+
+  console.log(data);
+
+  // console.log(data);
+  // dispatch({ type: GET_DATA_SUCCESSFULLY, payload: data });
 };
 
 export const updated =

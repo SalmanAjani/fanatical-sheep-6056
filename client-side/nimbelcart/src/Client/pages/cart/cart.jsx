@@ -6,29 +6,22 @@ import CheckoutTab from "./checkoutTab";
 // import { getData } from "./redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react"
+import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react";
 import { getData } from "../../../redux/bag/actions";
-
-
-
-
-
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { loading, error,items} = useSelector((store) => store.carts);
+  const { loading, error, items } = useSelector((store) => store.carts);
   // const items = JSON.parse(localStorage.getItem("cart-item")) || [];
   // items.push(
-    
-  // );
-  let user=JSON.parse(localStorage.getItem("user"));
-console.log({userid:user._id},"user")
-  console.log(items);
- 
-  React.useEffect(() => {
-   
-    dispatch(getData());
 
+  // );
+  let user = JSON.parse(localStorage.getItem("user"));
+  console.log({ userid: user._id }, "user");
+  console.log(items);
+
+  React.useEffect(() => {
+    dispatch(getData());
   }, [dispatch]);
 
   if (loading) {
@@ -70,8 +63,6 @@ console.log({userid:user._id},"user")
         </Stack>
         <CheckoutTab items={items} />
       </Stack>
-      
-      
     </>
   );
 };
@@ -86,19 +77,17 @@ console.log({userid:user._id},"user")
 // import { Box, Text, Spinner, Heading, Stack, HStack } from "@chakra-ui/react";
 // import { addtocart, getData } from "./redux/actions";
 
-
-
 // const Cart = () => {
 //   const dispatch = useDispatch();
 //   const { loading, error,items} = useSelector((store) => store.carts);
 //   // const items = JSON.parse(localStorage.getItem("cart-item")) || [];
 //   // items.push(
-    
+
 //   // );
 //   console.log(items);
- 
+
 //   React.useEffect(() => {
-   
+
 //     dispatch(getData());
 
 //   }, [dispatch]);
