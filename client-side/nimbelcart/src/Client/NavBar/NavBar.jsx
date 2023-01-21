@@ -86,7 +86,14 @@ function Navbar() {
                 <Link to="/admin/dashboard">Admin</Link>
               </Box>
             </Flex>
-          ) : ""}
+          ) : (
+            <Flex align={"center"} alignItems="center" gap="5px">
+              <RiAdminFill color="tomato" />
+              <Box mt="3px" fontSize={[10, 14]}>
+                <Link to="/admin/dashboard">Admin</Link>
+              </Box>
+            </Flex>
+          )}
           <Flex align={"center"} alignItems="center" gap="5px">
             <BsFileText color="tomato" h={[100, 200, 300]} />
             <Box mt="3px" fontSize={[10, 14]}>
