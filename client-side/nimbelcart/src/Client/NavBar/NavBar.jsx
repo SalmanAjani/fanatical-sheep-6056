@@ -25,7 +25,7 @@ function Navbar() {
   
 
   return (
-    <Box position="sticky" top="0" bg="#fff">
+    <Box position="fixed" top="0" right='0'left='0' bg="#fff">
       {/* ?logo */}
       <Flex justify={"center"} align={"center"} mt="1em">
         <Box w={{ base: "60px", sm: "80px", md: "100px", lg: "150px" }}>
