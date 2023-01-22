@@ -6,7 +6,7 @@ const PieChartPage = () => {
   return (
     <div>
     <AdminNavbar/>
-    <Box pl={[0,240,240]}>
+    <Box pl={[0,240,240]} pt={[0,0,100]}>
         <AvgCustomer/>
     </Box>
     </div>

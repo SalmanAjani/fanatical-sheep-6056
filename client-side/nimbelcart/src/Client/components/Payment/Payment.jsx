@@ -42,7 +42,7 @@ export const Payment = ({price})=> {
   }, [Razorpay]);
   return (
     <Box >
-    <Button colorScheme={"red"}
+    <Button 
       onClick={() => {
         handlePayment(price);
         // alert("Purchase completed"+"\n"+`Order Id ${Date.now()}`)
