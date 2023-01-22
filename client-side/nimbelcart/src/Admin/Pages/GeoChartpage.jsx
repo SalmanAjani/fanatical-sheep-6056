@@ -6,7 +6,7 @@ const GeoChartpage = () => {
   return (
     <div>
           <AdminNavbar/>
-    <Box pl={[0,240,240]}>
+    <Box pl={[0,240,240]} pt={[0,0,200]}>
     <GeoChart/>
     </Box>
     </div>

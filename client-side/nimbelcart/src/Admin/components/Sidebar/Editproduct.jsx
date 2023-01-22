@@ -16,9 +16,10 @@ export const Editproduct =()=> {
     const[previousdata,setPreviousData]=useState({});
     const {id} =useParams();
     const PRODUCTS= useSelector((state)=> state.Adminreducer.adminProducts)
+    
     const dispatch = useDispatch();
     const formclear =()=>{
-    navigate("/admin/dashboard")
+    navigate(-1)
     }
 
     const navigate =useNavigate();

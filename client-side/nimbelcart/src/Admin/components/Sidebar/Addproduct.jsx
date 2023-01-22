@@ -11,9 +11,9 @@ const [form, setForm]= useState({
   title: "",
   subtitle: "",
   images: "",
-  discounted_price: null,
-  quantity: null,
-  userid:null
+  discounted_price: "",
+  quantity: "",
+  userid:""
   // JSON.parse(localStorage.getItem("user"))._id || 0
      
 })
@@ -24,8 +24,9 @@ const formclear =()=>{
     title: "",
     subtitle: "",
     images: "",
-    discounted_price: null,
-    quantity: null,
+    discounted_price: "",
+    quantity: "",
+    price:""
   })
 }
 
@@ -50,6 +51,7 @@ console.log(form)
       images: "",
       discounted_price: null,
       quantity: null,
+      price:""
 
     })
     toast({
@@ -88,27 +90,27 @@ console.log(form)
           <form>
             <FormControl id="Title" isRequired>
                   <FormLabel>Brand</FormLabel>
-                  <Input type="text"onChange={OnChangeValue}   name="title" />
+                  <Input type="text"onChange={OnChangeValue}  value={form.title}  name="title" />
                 </FormControl>
                 <FormControl id="Title" isRequired>
                   <FormLabel>Name</FormLabel>
-                  <Input type="text"onChange={OnChangeValue}   name="subtitle" />
+                  <Input type="text"onChange={OnChangeValue}   value={form.subtitle} name="subtitle" />
                 </FormControl>
             <FormControl id="Image" isRequired>
               <FormLabel>Image Url</FormLabel>
-              <Input type="Text" onChange={OnChangeValue} name="images"  />
+              <Input type="Text" onChange={OnChangeValue} value={form.images} name="images"  />
             </FormControl>
             <FormControl id="Description" isRequired>
                   <FormLabel>Discounted Price</FormLabel>
-                  <Input type="text" onChange={OnChangeValue}  name="discounted_price"/>
+                  <Input type="text" onChange={OnChangeValue}  value={form.discounted_price} name="discounted_price"/>
                 </FormControl>
               <FormControl id="Quqantity" isRequired>
               <FormLabel>Quantity(unit)</FormLabel>
-              <Input type="number" onChange={OnChangeValue}  name="quantity"/>
+              <Input type="number" onChange={OnChangeValue}  value={form.quantity} name="quantity"/>
             </FormControl> 
             <FormControl id="price" isRequired>
               <FormLabel>Price (₹)</FormLabel>
-              <Input type="number" maxLength={"2"} onChange={OnChangeValue}  name="price"/>
+              <Input type="number" maxLength={"2"} onChange={OnChangeValue}  value={form.price} name="price"/>
             </FormControl>  
             <Stack pt={5} justify={["space-evenly","flex-end"]} spacing={6} direction={['row', 'row']}>
           <Box><Button
@@ -143,4 +145,3 @@ console.log(form)
     </Stack>
   );
 }
-

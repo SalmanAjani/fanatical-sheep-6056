@@ -6,7 +6,7 @@ export const CalenderPage = () => {
   return (
     <div>
             <AdminNavbar/>
-    <Box pl={[0,240,240]}>
+    <Box pl={[0,240,260]} pt={[0,0,100]}>
    <GoogleCalender/>
     </Box>
     </div>

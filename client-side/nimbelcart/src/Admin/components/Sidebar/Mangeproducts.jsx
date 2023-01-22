@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import {Table,Thead,Tbody,TableCaption,TableContainer,Divider,Image, Flex, Button,useToast, Tr, Th} from '@chakra-ui/react'
 import { FcAdvertising } from 'react-icons/fc';
 import { FiEdit } from 'react-icons/fi';
+import { VscPreview } from "react-icons/vsc";
 import { GiEmptyWoodBucket } from 'react-icons/gi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate  } from 'react-router-dom';
 import { DELETE_ADMIN_DATA, GET_ADMIN_DATA } from '../../../redux/app/admin/action';
 import { Pagination } from "../Pagination"
-import { VscPreview } from "react-icons/vsc";
+
 const ManageProducts = () => {
   const toast= useToast();
   const [currentPage, setCurrentPage] = useState(1);

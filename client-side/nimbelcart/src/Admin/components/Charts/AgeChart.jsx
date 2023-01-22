@@ -1,8 +1,10 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 import {IndianCxData} from "../../../Utils/Indian.cx.data"
+import { Stack } from "@chakra-ui/react";
 export const AgeChart=()=> {
   return (
+    <Stack >
     <Chart
       width={"100%"}
       height={"100%"}
@@ -45,5 +47,6 @@ export const AgeChart=()=> {
         },
       ]}
     />
+    </Stack>
   );
 }
