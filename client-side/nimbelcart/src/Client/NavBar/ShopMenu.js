@@ -41,7 +41,7 @@ function ShopMenu() {
           bg="#fff"
           zIndex={999}
         >
-          <MenuItem bg="#fff" z-zIndex={999}>
+          <MenuItem bg="#fff" zIndex={999}>
           <Grid gap="100px" templateColumns={"1fr 5fr"}>
             <Box borderRight={"1px solid #d6d6d6"} pr="100px">
               <Text color="tomato">Apparels</Text>
