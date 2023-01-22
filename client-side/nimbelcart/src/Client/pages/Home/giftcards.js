@@ -19,7 +19,7 @@ function GiftCards({ products, heading }) {
           align={'center'}
         >
           {products.map((item) => (
-            <Box>
+            <Box key={item.id}>
               <Image src={item.img} alt="img" />
               <Center fontWeight={"bold"} mt="30px">{item.title}</Center>
             </Box>

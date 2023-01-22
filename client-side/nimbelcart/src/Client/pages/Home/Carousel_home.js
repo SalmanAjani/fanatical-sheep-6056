@@ -21,8 +21,8 @@ import './carousel.css'
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper";
 
-export default function Carousel_home({data}) {
-  console.log(data)
+export default function Carousel_home() {
+
   return (
     <Box mt="10em" mb='2em'>
       <Swiper

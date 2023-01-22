@@ -10,21 +10,21 @@ import {
 } from "react-icons/bs";
 import { AiFillAndroid } from "react-icons/ai";
 const links = [
-  "About Us",
-  "Partner with us",
-  "Terms & Conditions",
-  "Blog",
-  "Media",
-  "24x7 Help",
-  "Grievance policy",
-  "Bug bounty",
-  "Return/Cancellation policy",
-];
+  {id:1,data:"About Us"},
+  {id:2,data:"Partner with us"},
+  {id:3,data:"Terms & Conditions"},
+  {id:4,data:"Blog"},
+  {id:5,data:"Media"},
+  {id:6,data:"24x7 Help"},
+  {id:7,data:"Grievance policy"},
+  {id:8,data:"Bug bounty"},
+  {id:9,data:"Return/Cancellation polic"}
+  ];
 const icons = [
-  "https://www.nicepng.com/png/detail/212-2128366_verified-by-visa-logo.png",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/RuPay.svg/383px-RuPay.svg.png?20200901070738",
-  "https://chosenpayments.com/wp-content/uploads/2018/01/amex-safekey-logo.jpg",
+  {id:1,data:"https://www.nicepng.com/png/detail/212-2128366_verified-by-visa-logo.png"},
+  {id:2,data:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png"},
+  {id:3,data:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/RuPay.svg/383px-RuPay.svg.png?20200901070738"},
+  {id:4,data:"https://chosenpayments.com/wp-content/uploads/2018/01/amex-safekey-logo.jpg"},
 ];
 
 function Footer() {
@@ -44,8 +44,8 @@ function Footer() {
         {/* other links */}
         <Flex gap="10px">
           {links.map((item) => (
-            <Text _hover={{ color: "red" }} fontSize={[6,9,11]}>
-              {item}
+            <Text key={item.id}_hover={{ color: "red" }} fontSize={[6,9,11]}>
+              {item.data}
             </Text>
           ))}
         </Flex>
@@ -73,8 +73,8 @@ function Footer() {
         {/* payment partners  */}
 
         {icons.map((img) => (
-          <Box w={["8%", "6%", "4%", "3%"]}>
-            <Image w="100%" src={img} alt="img" />
+          <Box key={img.id} w={["8%", "6%", "4%", "3%"]}>
+            <Image w="100%" src={img.data} alt="img" />
           </Box>
         ))}
       </Flex>
