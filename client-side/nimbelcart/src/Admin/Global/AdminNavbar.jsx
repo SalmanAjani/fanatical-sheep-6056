@@ -68,7 +68,12 @@ const Navbar = () => {
             {/* <IconButton size={'md'}  icon={isOpen ? "" : <HamburgerIcon />} */}
             {isOpen ? (
               <NavLink to={"/"}>
-              <Image borderRadius={5} w={55} src={Weblogo} alt="Nimble Cart" />
+                <Image
+                  borderRadius={5}
+                  w={55}
+                  src={Weblogo}
+                  alt="Nimble Cart"
+                />
               </NavLink>
             ) : (
               <IconButton
@@ -82,13 +87,13 @@ const Navbar = () => {
 
             {/* // aria-label={'Open Menu'} display={{ md: 'none' }}onClick={isOpen ? onClose : onOpen}/> */}
             <NavLink to={"/"}>
-            <Image
-              display={{ base: "none", md: "block" }}
-             borderRadius={5}
-              w={100}
-              src={Weblogo}
-              alt="Nimble Cart"
-            />
+              <Image
+                display={{ base: "none", md: "block" }}
+                borderRadius={5}
+                w={100}
+                src={Weblogo}
+                alt="Nimble Cart"
+              />
             </NavLink>
           </HStack>
           <HStack>
@@ -149,9 +154,15 @@ const Navbar = () => {
             </HStack>
           </HStack>
         </Flex>
-       <Flex m={0} justify={"end"} pr={500}> <SearchBar query={SearchInputText} setQuary={handelsetSearchInputText} /></Flex>
+        <Flex m={0} justify={"end"} pr={500}>
+          {" "}
+          <SearchBar
+            query={SearchInputText}
+            setQuary={handelsetSearchInputText}
+          />
+        </Flex>
       </Box>
-     
+
       <Sidebar
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
