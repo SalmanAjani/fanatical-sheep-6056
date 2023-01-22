@@ -6,9 +6,9 @@ import { ProductPreview } from '../components/ProductPreview'
 export const ProductPreviewPage = () => {
   return (
     <div>
-      <AdminNavbar/>
-      <Box pl={[0,240,240]}>
-        <ProductPreview/>
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]}>
+        <ProductPreview />
       </Box>
     </div>
   )

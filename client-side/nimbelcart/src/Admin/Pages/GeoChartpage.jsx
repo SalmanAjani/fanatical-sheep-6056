@@ -5,10 +5,10 @@ import { GeoChart } from '../components/Charts/GeoChart'
 const GeoChartpage = () => {
   return (
     <div>
-          <AdminNavbar/>
-    <Box pl={[0,240,240]} pt={[0,0,200]}>
-    <GeoChart/>
-    </Box>
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]} pt={[0, 0, 200]}>
+        <GeoChart />
+      </Box>
     </div>
   )
 }

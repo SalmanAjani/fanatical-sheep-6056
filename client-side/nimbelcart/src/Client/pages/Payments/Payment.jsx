@@ -3,7 +3,7 @@ import useRazorpay from "react-razorpay";
 import logo from "../../../Assets/nimbleCart_logo_rect.jpg";
 import { Box, Button } from "@chakra-ui/react";
 
-export const Payment = ({price})=> {
+export const Payment = ({ price, myWidth })=> {
     const {name, userEmail} =[]
 
   const Razorpay = useRazorpay();
@@ -41,8 +41,8 @@ export const Payment = ({price})=> {
     rzpay.open();
   }, [Razorpay]);
   return (
-    <Box >
-    <Button colorScheme={"red"}
+    <Box  >
+    <Button w={myWidth} colorScheme={"red"}
       onClick={() => {
         handlePayment(price);
         // alert("Purchase completed"+"\n"+`Order Id ${Date.now()}`)

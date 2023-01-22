@@ -35,7 +35,7 @@ export const Calendar = (props) => {
     allData.forEach((dataPoint) => {
       if (dataPoint[0] >= threeMonthsAgo) {
         let className = "event-green-medium";
-        if(dataPoint[1] > 0) {
+        if (dataPoint[1] > 0) {
           className = dataPoint[1] > 5 ? "event-green-high" : "event-green-medium";
         } else {
           className = dataPoint[1] < -5 ? "event-red-high" : "event-red-medium";
@@ -67,9 +67,9 @@ export const Calendar = (props) => {
 };
 
 const Event = ({ event }) => {
-    return (
-      <span className={event.className}>
-        <strong style={{ color: "white" }}>{event.title}</strong>
-      </span>
-    );
-  };
+  return (
+    <span className={event.className}>
+      <strong style={{ color: "white" }}>{event.title}</strong>
+    </span>
+  );
+};

@@ -5,11 +5,11 @@ import { ComboChart } from '../components/Charts/ComboChart'
 const BarChartPage = () => {
   return (
     <div>
-    <AdminNavbar/>
-    <Stack
-     pl={[0,240,240]} pt={[0,0,100]}>
-      <ComboChart/>
-    </Stack>
+      <AdminNavbar />
+      <Stack
+        pl={[0, 240, 240]} pt={[0, 0, 100]}>
+        <ComboChart />
+      </Stack>
     </div>
   )
 }

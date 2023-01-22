@@ -45,7 +45,8 @@ export const removed = (id) => (dispatch) => {
     },
   })
     .then((res) => res.json())
-    .then((res) => console.log("res", res))
+    .then((res) => {dispatch(getData())
+         console.log("res", res)})
     .catch((err) => console.log(err));
   dispatch({ type: REMOVE_ITEM, payload: id });
 };

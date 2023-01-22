@@ -5,11 +5,11 @@ import { Support } from '../components/Sidebar/Support'
 const SupportPage = () => {
   return (
     <div>
-        
-       <AdminNavbar/>
-    <Box pl={[0,240,240]}>
-        <Support/>
-    </Box>
+
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]}>
+        <Support />
+      </Box>
     </div>
   )
 }

@@ -21,18 +21,18 @@ export const options = {
   backgroundColor: 'transparent',
 };
 
-export const ComboChart=()=> {
-    const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-const currentMonth = currentDate.getMonth() + 1;
-const previousYear = currentYear - 1;
-const previousYear1 = currentYear - 2;
-const previousYear2 = currentYear - 3;
-const previousYear3 = currentYear - 4;
- data[data.length - 1][0] = `${currentMonth}/${currentYear}`;
- data[data.length - 2][0] = `${currentMonth}/${previousYear}`;
+export const ComboChart = () => {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth() + 1;
+  const previousYear = currentYear - 1;
+  const previousYear1 = currentYear - 2;
+  const previousYear2 = currentYear - 3;
+  const previousYear3 = currentYear - 4;
+  data[data.length - 1][0] = `${currentMonth}/${currentYear}`;
+  data[data.length - 2][0] = `${currentMonth}/${previousYear}`;
 
-const data2 = [
+  const data2 = [
     [
       "year",
       "Return",
@@ -51,16 +51,16 @@ const data2 = [
 
   return (
     <Box>
-    <Chart
-      chartType="ComboChart"
-      width="100%"
-      height="400px"
-      data={data2}
-      options={options}
-    />
+      <Chart
+        chartType="ComboChart"
+        width="100%"
+        height="400px"
+        data={data2}
+        options={options}
+      />
 
-    <VStack pt={5} align={"center"} justify={"center"} ><Divider backgroundColor={"red"} w={"70%"}/></VStack>
-    <Text  align={"center"} p={2}  >Annual Report</Text>
-      </Box>
+      <VStack pt={5} align={"center"} justify={"center"} ><Divider backgroundColor={"red"} w={"70%"} /></VStack>
+      <Text align={"center"} p={2}  >Annual Report</Text>
+    </Box>
   );
 }

@@ -24,8 +24,11 @@ import "swiper/css";
 import Carousel from "./Carousel";
 
 import data from "../../../Assets/data/products.json";
+import { useDispatch } from "react-redux";
+import { getData } from "../../../redux/bag/actions";
 
 const ProductDetails = () => {
+  const dispatch=useDispatch();
   let element = JSON.parse(localStorage.getItem("element"));
   const toast = useToast();
 
@@ -58,7 +61,10 @@ const ProductDetails = () => {
       body: JSON.stringify(dataObj),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => {console.log(res)
+          dispatch(getData());
+
+})
       .catch((err) => console.log(err));
   };
 

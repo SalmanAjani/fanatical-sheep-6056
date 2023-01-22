@@ -1,8 +1,8 @@
-import {  Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react'
+import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react'
 import { useState } from 'react'
 
 
-export const PopUps = ()=> {
+export const PopUps = () => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
@@ -13,8 +13,8 @@ export const PopUps = ()=> {
           <ModalHeader>Nimble cart</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          Shop smart, shop nimble
-          
+            Shop smart, shop nimble
+
           </ModalBody>
         </ModalContent>
       </Modal>

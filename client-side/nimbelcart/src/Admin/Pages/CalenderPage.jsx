@@ -5,10 +5,10 @@ import { GoogleCalender } from '../components/Charts/GoogleCalender'
 export const CalenderPage = () => {
   return (
     <div>
-            <AdminNavbar/>
-    <Box pl={[0,240,260]} pt={[0,0,100]}>
-   <GoogleCalender/>
-    </Box>
+      <AdminNavbar />
+      <Box pl={[0, 240, 260]} pt={[0, 0, 100]}>
+        <GoogleCalender />
+      </Box>
     </div>
   )
 }

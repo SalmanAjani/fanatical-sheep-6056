@@ -6,6 +6,7 @@ import {
   InputRightElement,
   Input,
   InputGroup,
+  HStack,
 } from "@chakra-ui/react";
 
 import { FiSearch } from "react-icons/fi";
@@ -102,12 +103,16 @@ function Navbar() {
           </Flex>
 
           <Flex align={"center"} alignItems="center" gap="5px">
-            <BsHandbag color="tomato" h={[100, 200, 300]} />
-            <Box mt="3px" fontSize={[10, 14]}>
-              <Link to="/cart">
-                {items.length > 0 ? items.length : "No Items in the bag"}
-              </Link>
-            </Box>
+            <Link to="/cart">
+              <HStack>
+                <BsHandbag color="tomato" h={[100, 200, 300]} />
+                <Box mt="3px" fontSize={[10, 14]}>
+
+                  {items.length > 0 ? items.length : "No Items in the bag"}
+
+                </Box>
+              </HStack>
+            </Link>
           </Flex>
 
           {!isAuthenticated ? (

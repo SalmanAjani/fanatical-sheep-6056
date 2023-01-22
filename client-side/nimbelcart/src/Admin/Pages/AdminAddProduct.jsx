@@ -5,11 +5,11 @@ import { Addproduct } from '../components/Sidebar/Addproduct'
 const AdminAddProduct = () => {
   return (
     <div>
-    <AdminNavbar/>
-    <Box pl={[0,240,240]}>
-        <Addproduct/>
-    </Box>
-  </div>
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]}>
+        <Addproduct />
+      </Box>
+    </div>
   )
 }
 

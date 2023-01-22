@@ -1,11 +1,11 @@
 import { Box, Divider, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { Chart } from "react-google-charts";
-import {IndianCxData} from "../../../Utils/Indian.cx.data"
+import { IndianCxData } from "../../../Utils/Indian.cx.data"
 
 export const options = {
   backgroundColor: 'transparent',
-  color:"white",
+  color: "white",
   legend: "none",
   pieSliceText: "label",
   slices: {
@@ -16,18 +16,18 @@ export const options = {
   },
 };
 
-export const AvgCustomer =()=> {
+export const AvgCustomer = () => {
   return (
     <Box>
-    <Chart
-      chartType="PieChart"
-      data={IndianCxData}
-      options={options}
-      width={"100%"}
-      height={"400px"}
-    />
-    <VStack align={"center"} justify={"center"} ><Divider backgroundColor={"red"} w={"70%"}/></VStack>
-    <Text align={"center"} p={2}  >Your Indian Cutomer Base</Text>
+      <Chart
+        chartType="PieChart"
+        data={IndianCxData}
+        options={options}
+        width={"100%"}
+        height={"400px"}
+      />
+      <VStack align={"center"} justify={"center"} ><Divider backgroundColor={"red"} w={"70%"} /></VStack>
+      <Text align={"center"} p={2}  >Your Indian Cutomer Base</Text>
     </Box>
   );
 }

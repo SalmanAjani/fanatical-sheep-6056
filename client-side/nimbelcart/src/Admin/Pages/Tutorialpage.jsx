@@ -5,10 +5,10 @@ import { Tutorial } from '../components/Sidebar/Tutorial'
 export const Tutorialpage = () => {
   return (
     <div>
-            <AdminNavbar/>
-    <Box pl={[0,240,240]}>
-        <Tutorial/>
-    </Box>
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]}>
+        <Tutorial />
+      </Box>
     </div>
   )
 }

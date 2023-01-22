@@ -18,8 +18,8 @@ import {
   useToast
 } from "@chakra-ui/react";
 
-export const Support=()=> {
-  const {isOpen, onOpen, onClose} = useDisclosure();
+export const Support = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   const handleSubmit = (e) => {
     e.preventDefault();

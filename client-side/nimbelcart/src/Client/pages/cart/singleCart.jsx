@@ -98,7 +98,7 @@ const SingleCart = ({ _id, images, discounted_price, title, quantity }) => {
 
   const removeItem = (id) => {
     dispatch(removed(id));
-    dispatch(getData());
+    
   };
 
   return (

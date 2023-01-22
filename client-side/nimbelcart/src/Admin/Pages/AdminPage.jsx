@@ -10,9 +10,9 @@ import { Dashboard } from '../components/Sidebar/Dashboard'
 const AdminPage = () => {
   return (
     <div>
-      <AdminNavbar/>
-      <Box pl={[0,240,240]}>
-        <Dashboard/>
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]}>
+        <Dashboard />
       </Box>
     </div>
   )

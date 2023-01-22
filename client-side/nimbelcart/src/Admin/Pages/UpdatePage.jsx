@@ -5,10 +5,10 @@ import { Editproduct } from '../components/Sidebar/Editproduct'
 const UpdatePage = () => {
   return (
     <div>
-         <AdminNavbar/>
-    <Box pl={[0,240,240]}>
-        <Editproduct/>
-    </Box>
+      <AdminNavbar />
+      <Box pl={[0, 240, 240]}>
+        <Editproduct />
+      </Box>
     </div>
   )
 }

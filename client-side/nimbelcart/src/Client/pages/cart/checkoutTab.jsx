@@ -13,8 +13,7 @@ import {
   FormLabel,
   FormControl,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
-import {Payment} from "../Payments/Payment"
+import { Payment } from "../Payments/Payment"
 
 const CheckoutTab = ({ items }) => {
   const [value, setValue] = React.useState("");
@@ -47,7 +46,6 @@ const CheckoutTab = ({ items }) => {
   };
 
   let updatedPrice = total();
-  console.log(updatedPrice);
 
   const handleCoupen = (e) => {
     e.preventDefault();
@@ -95,7 +93,6 @@ const CheckoutTab = ({ items }) => {
               CHECKOUT
             </Button>
           </NavLink> */}
-          <Payment price={Number(total())} />
         </Hide>
         <Box p="4" bg="white" boxShadow="md">
           <Box>
@@ -215,12 +212,13 @@ const CheckoutTab = ({ items }) => {
                 {price > 0
                   ? `₹${price.toFixed(2)}`
                   : total() < 1000
-                  ? `₹${total() + 50}`
-                  : `₹${total().toLocaleString("en-US")}`}
+                    ? `₹${total() + 50}`
+                    : `₹${total().toLocaleString("en-US")}`}
               </Text>
             </Stack>
           </Stack>
         </Box>
+        <Stack p={3} align={"center"} justify={"center"} ><Payment myWidth={"50vh"} price={Number(total())} /></Stack>
         <Text
           mt="4"
           color="gray.500"
@@ -274,6 +272,7 @@ const CheckoutTab = ({ items }) => {
           </Flex>
         </Show>
       </Box>
+
     </>
   );
 };

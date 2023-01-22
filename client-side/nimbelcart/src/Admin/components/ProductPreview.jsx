@@ -141,7 +141,7 @@ const handleEdit =(id,title)=>{
               <Box>
               <HStack align={"center"} justify={"center"}>
               <Text  fontWeight="bold" ml={-7} fontSize="xl">Sizes </Text>
-                {product && product.size && product.size.length>1 && product.size.map((size, index) => (
+                {product && product.size && product.size.length>0 && product.size.map((size, index) => (
                   <Box w={6} h={6} align={"center"} justify={"center"} borderRadius={"50%"} color={"red"} bg={"blackAlpha.900"} key={index} >
                       <Stack align={"center"} justify={"center"}>
                           <Text fontSize={"xs"} p={"2px"} colorScheme={"white"} >{size}</Text>
