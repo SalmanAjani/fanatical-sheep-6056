@@ -31,7 +31,7 @@ const ManageProducts = () => {
     if(PRODUCTS.length >= 0) {
         dispatch(GET_ADMIN_DATA())
     }
-  }, [PRODUCTS.length,dispatch])
+  }, [])
 
   // Get current products
   const indexOfLastProduct = currentPage * productsPerPage;
