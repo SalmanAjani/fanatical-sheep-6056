@@ -14,6 +14,7 @@ import {
   FormControl,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import {Payment} from "../Payments/Payment"
 
 const CheckoutTab = ({ items }) => {
   const [value, setValue] = React.useState("");
@@ -76,7 +77,7 @@ const CheckoutTab = ({ items }) => {
     <>
       <Box height="min-content" w={{ base: "100%", md: "50%" }} m="auto">
         <Hide below="md">
-          <NavLink to="/checkout">
+          {/* <NavLink to="/checkout">
             <Button
               w="100%"
               m="auto"
@@ -93,7 +94,8 @@ const CheckoutTab = ({ items }) => {
             >
               CHECKOUT
             </Button>
-          </NavLink>
+          </NavLink> */}
+          <Payment price={Number(total())} />
         </Hide>
         <Box p="4" bg="white" boxShadow="md">
           <Box>
