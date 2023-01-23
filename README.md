@@ -30,11 +30,11 @@ Thank you for visiting our project.
 ## Team members
 It's a collaborative Project, we name this team fanatical-sheep, and our members are 
 
--
+- Salman Ajani
 - [Akash Mondal](https://iakashmondal.github.io/)
-- piyush agrawal
--
--
+- Piyush Agrawal
+- Sonia Saini
+- Krishna Kumar Shakya
 
 ## Few Images Of our Web Site
 - Home page and navbar
