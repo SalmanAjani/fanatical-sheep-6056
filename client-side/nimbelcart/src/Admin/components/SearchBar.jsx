@@ -61,5 +61,3 @@ export const SearchBar = ({ query, home_width }) => {
     </Box>
   )
 }
-
-
