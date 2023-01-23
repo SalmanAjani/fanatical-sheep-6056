@@ -8,8 +8,8 @@ our slogan is "Shop Smart. Shop Nimble".
 Thank you for visiting our project.
 
 ## Live Links of Our Website
-- Netlify: [click here](https://nimbelcart.netlify.app/)
-- Server: [click here](https://odd-tan-lizard-kit.cyclic.app/)
+- Frontend: [Netlify](https://nimbelcart.netlify.app/)
+- Backend: [Cyclic](https://odd-tan-lizard-kit.cyclic.app/)
 
 ## Tech Stack
 ### Client side                  
