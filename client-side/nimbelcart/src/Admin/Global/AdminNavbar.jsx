@@ -18,10 +18,11 @@ import {
   Drawer,
   DrawerContent,
   Menu,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
-import { NavLink, useNavigate } from "react-router-dom";
-import Weblogo from "../.././Assets/nimbleCart_logo_rect.jpg";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../Assets/nimbleCart_logo_rect.jpg";
 import { useCallback } from "react";
 import { FiBell, FiChevronDown } from "react-icons/fi";
 import { Sidebar } from "./SideBar";
@@ -67,9 +68,9 @@ const Navbar = () => {
           <HStack>
             {/* <IconButton size={'md'}  icon={isOpen ? "" : <HamburgerIcon />} */}
             {isOpen ? (
-              <NavLink to={"/"}>
-              <Image borderRadius={5} w={55} src={Weblogo} alt="Nimble Cart" />
-              </NavLink>
+              <Link to="/">
+                <Text fontWeight="bold">NimbleCart</Text>
+              </Link>
             ) : (
               <IconButton
                 size={"md"}
@@ -81,15 +82,9 @@ const Navbar = () => {
             )}
 
             {/* // aria-label={'Open Menu'} display={{ md: 'none' }}onClick={isOpen ? onClose : onOpen}/> */}
-            <NavLink to={"/"}>
-            <Image
-              display={{ base: "none", md: "block" }}
-             borderRadius={5}
-              w={100}
-              src={Weblogo}
-              alt="Nimble Cart"
-            />
-            </NavLink>
+            <Link to="/">
+              <Text fontWeight="bold">NimbleCart</Text>
+            </Link>
           </HStack>
           <HStack>
             <HStack spacing={{ base: "0", md: "6" }}>
@@ -149,9 +144,15 @@ const Navbar = () => {
             </HStack>
           </HStack>
         </Flex>
-       <Flex m={0} justify={"end"} pr={500}> <SearchBar query={SearchInputText} setQuary={handelsetSearchInputText} /></Flex>
+        <Flex m={0} justify={"end"} pr={500}>
+          {" "}
+          <SearchBar
+            query={SearchInputText}
+            setQuary={handelsetSearchInputText}
+          />
+        </Flex>
       </Box>
-     
+
       <Sidebar
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
