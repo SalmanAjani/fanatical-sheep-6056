@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import GiftCards from "./giftcards";
 import data from "./hompagedb.json";
@@ -9,8 +9,13 @@ import { RiShieldStarLine } from "react-icons/ri";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import CarouselHome from "./Carousel_home";
 import Footer from "../../Footer/Footer";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({ type: "AUTH_LOGIN_RESET" });
+  }, [dispatch]);
   return (
     <div>
       <CarouselHome />
