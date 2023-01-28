@@ -9,8 +9,8 @@ our slogan is "Shop Smart. Shop Nimble".
 Thank you for visiting our project.
 
 ## Live Links of Our Website
-- Vercel: [click here](https://paytmmall.com/)
-- firebase: [click here](https://paytmmall.com/)
+- Netlify: [click here](https://nimbelcart.netlify.app/)
+
 - Original website : [click here](https://paytmmall.com/)
 
 ## Tech Stack
