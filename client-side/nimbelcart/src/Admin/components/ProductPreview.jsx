@@ -20,14 +20,15 @@ export const ProductPreview = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [zoom, setZoom] = useState(false);
   const { id } = useParams();
-  const PRODUCTS = useSelector((state) => state.Adminreducer.adminProducts);
+  const PRODUCTS = useSelector((state) => state.Adminreducer.adminSearchData);
 
   useEffect(() => {
     if (id) {
       const productId = PRODUCTS.find((PRODUCTS) => PRODUCTS.id === Number(id));
       setProduct(productId);
     }
-  }, []);
+  }, [id,PRODUCTS,dispatch]);
+
   useEffect(() => {
     if (product && product.images) {
         setSelectedImage(product.images[0]);
